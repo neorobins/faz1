@@ -670,7 +670,7 @@ Calendar.cellClick = function(el, ev) {
 					"Thank you!\n" +
 					"http://dynarch.com/mishoo/calendar.epl\n";
 			}
-			alert(text);
+			//alert(text);
 			return;
 		    case -2:
 			if (year > cal.minYear) {
@@ -812,7 +812,7 @@ Calendar.prototype.create = function (_par) {
 	(this.isPopup) && --title_length;
 	(this.weekNumbers) && ++title_length;
 
-	hh("?", 1, 400).ttip = Calendar._TT["INFO"];
+	hh("", 1, 400).ttip = Calendar._TT["INFO"];
 	this.title = hh("", title_length, 300);
 	this.title.className = "title";
 	if (this.isPopup) {
