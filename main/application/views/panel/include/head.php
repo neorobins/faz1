@@ -14,6 +14,6 @@
 <![endif]-->
 <?php
 foreach($stylesheet as $item){
- echo   '<link rel="stylesheet" href="'.base_url($item).'">';
+ echo   '<link rel="stylesheet" href="'.base_url('assets/panel_assets/'.$item).'">'.PHP_EOL;
 }
 ?>

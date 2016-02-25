@@ -4,6 +4,6 @@
 <script src="<?= base_url(); ?>assets/panel_assets/dist/js/app.min.js"></script>
 <?php
 foreach($js as $item){
-    echo   '<script src="'.base_url('assets/panel_assets/'.$item).'"></script>';
+    echo   '<script src="'.base_url('assets/panel_assets/'.$item).'"></script>'.PHP_EOL;
 }
 ?>

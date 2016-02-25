@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="UTF-8">
     <title><?= $mainVars['title']; ?></title>
     <?= $head ?>
+    <?= $js ?>
 </head>
 <body class="skin-blue sidebar-mini">
 <div class="wrapper">
@@ -120,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </aside>
     <div class="control-sidebar-bg"></div>
 </div>
-<?= $js ?>
+
 </body>
 
 </html>
