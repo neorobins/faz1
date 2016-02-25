@@ -18,7 +18,9 @@
                 <?=$part2?>
                 <?=$part3?>
                 <div class="box-footer">
-                    <button type="button" class="btn btn-info pull-right" onclick="nextStepRegister();">مرحله بعد
+                    <button type="button" id="previous_step" class="btn btn-info pull-right" style="display: none;" onclick="previousStepRegister();">مرحله ی قبل
+                    </button>
+                    <button type="button" id="next_step" class="btn btn-info pull-right" onclick="nextStepRegister();">مرحله بعد
                     </button>
                     <button type="submit" id="submit" class="btn btn-danger pull-right" style="display: none;">تکمیل ثبت نام
                     </button>
