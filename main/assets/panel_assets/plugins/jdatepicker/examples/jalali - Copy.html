@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<title>JalalJSCalendar :: Jalali Example</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <link rel="stylesheet" type="text/css" media="all" href="../skins/aqua/theme.css" title="Aqua" />
+
+	    
+		<!-- import the Jalali Date Class script -->
+		<script type="text/javascript" src="../jalali.js"></script>
+		
+		<!-- import the calendar script -->
+		<script type="text/javascript" src="../calendar.js"></script>
+		
+		<!-- import the calendar script -->
+		<script type="text/javascript" src="../calendar-setup.js"></script>
+		
+		<!-- import the language module -->
+		<script type="text/javascript" src="../lang/calendar-fa.js"></script>
+		
+<!-- helper script that uses the calendar -->		
+		<!-- other languages might be available in the lang directory; please check
+		your distribution archive. -->
+	</head>
+	<body>		
+		
+		<div class="example">
+			Jalali Date Input : 
+			<input id="date_input_1" type="text" /><img id="date_btn_1" src="cal.png" style="vertical-align: top;" />
+			<script type="text/javascript">
+				Calendar.setup({
+					inputField     :    "date_input_1",   // id of the input field
+					button         :    "date_btn_1",   // trigger for the calendar (button ID)
+		       		ifFormat       :    "%Y-%m-%d",       // format of the input field
+		       		dateType	   :	'jalali',
+		       		weekNumbers    : false
+				});
+			</script>
+		</div>
+		
+		<div class="example">
+			Jalali Date Input (multiple select) :<br />
+			<a id="trigger" href="#">Open Calendar</a>
+  			<div id="output"></div>
+		</div>
+	</body>
+</html>

@@ -22,12 +22,16 @@ function getMainVars()
     );
 }
 
-function loadView($viewName, $variables)
+//header -> stylesheet | footer -> js files
+function loadView($viewName, $variable = array(), $head = array(), $js_include = array())
 {
     $ci = get_instance();
     $ci->load->view('panel/layout/layout', array(
             'mainVars' => getMainVars(),
-            'pageContent' => $ci->load->view($viewName, $variables, TRUE))
+            'head' => $ci->load->view('panel/include/head', array('stylesheet' => $head), TRUE),
+            'footer' => $ci->load->view('panel/include/footer', array('version' => 'Demo'), TRUE),
+            'js' => $ci->load->view('panel/include/js', array('js' => $js_include), TRUE),
+            'pageContent' => $ci->load->view($viewName, $variable, TRUE))
     );
 }
 
