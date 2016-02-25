@@ -1,11 +1,20 @@
+<script>
+    $(function () {
+        formHelper(3);
+        //iCheck for checkbox and radio inputs
+        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue'
+        });
+    });
+</script>
 <section class="content">
     <div class="row">
         <div class="box box-info">
-            <div class="box-header with-border">
-                <h3 class="box-title">اطلاعات شخصی</h3>
-            </div><!-- /.box-header -->
+
             <!-- form start -->
             <form class="form-horizontal">
+<<<<<<< HEAD
                 <div class="box-body">
                     <div class="form-group">
                         <label for="firstName" class="col-sm-2 control-label">نام</label>
@@ -56,8 +65,16 @@
                     </div>
                     ...
                 </div><!-- /.box-body -->
+=======
+                <?=$part1?>
+                <?=$part2?>
+                <?=$part3?>
+>>>>>>> refs/remotes/origin/Mohammad-Amin
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-info pull-right">مرحله بعد</button>
+                    <button type="button" class="btn btn-info pull-right" onclick="nextStepRegister();">مرحله بعد
+                    </button>
+                    <button type="submit" id="submit" class="btn btn-danger pull-right" style="display: none;">تکمیل ثبت نام
+                    </button>
                 </div><!-- /.box-footer -->
             </form>
         </div>
