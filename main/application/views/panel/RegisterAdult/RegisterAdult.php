@@ -1,4 +1,12 @@
 <script>
+    $(document).ready(function() {
+        $(window).keydown(function(event){
+            if(event.keyCode == 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
+    });
     $(function () {
         formHelper(3);
         //iCheck for checkbox and radio inputs
@@ -13,7 +21,7 @@
         <div class="box box-info">
 
             <!-- form start -->
-            <form class="form-horizontal">
+            <form id="registerAdult" class="form-horizontal">
                 <?=$part1?>
                 <?=$part2?>
                 <?=$part3?>
