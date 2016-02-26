@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <label class="">
                             <input type="radio" class="minimal" name="d5">
                             <input type="text" id="melliCode" class="" onblur="checkM();"
-                                   style="text-align: left;direction: ltr;" name="d6" placeholder="کد ملی"><br/>
+                                   style="text-align: left;direction: ltr;" name="d6" data-inputmask='"mask": "9999999999"' placeholder="کد ملی" data-mask><br/>
                         </label>
                     </div>
                 </div>
