@@ -21,88 +21,88 @@ class UserLevel extends CI_Model
         switch ($section_id) {
             case 'patient': {
                 $return = array(
-                    'publicService' => array(
+                    'PublicService' => array(
                         'index' => 1,
                         'primaryTest'=>'آزمون های بدو ورود',
                         'publicTest' =>'آزمون های عمومی',
                         'name_fa' => 'خدمات عمومی'
                     ),
-                    'anxietyClinic' => array(
+                    'AnxietyClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'کلینیک اختلالات اضطراب'
                     ),
-                    'diagnosisClinic' => array(
+                    'DiagnosisClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيک تشخيص'
                     ),
-                    'behavioralEmotionalClinic' => array(
+                    'BehavioralEmotionalClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيك رفتاری هيجانی'
                     ),
-                    'developmentalClinic' => array(
+                    'DevelopmentalClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيک تحول و تكامل'
                     ),
-                    'learningDisabilitiesClinic' => array(
+                    'LearningDisabilitiesClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيک مهارت های تحصيلی'
                     ),
-                    'depressionClinic' => array(
+                    'DepressionClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيک اختلالات خلقی'
                     ),
-                    'familyClinic' => array(
+                    'FamilyClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيک خانواده'
                     ),
-                    'rehabilitationClinic' => array(
+                    'RehabilitationClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيک اختلالات كف لگن'
                     ),
-                    'industrialOrganizationalClinic' => array(
+                    'IndustrialOrganizationalClinic' => array(
                         'index' => 1,
                         'test'=>'آزمون ها',
                         'consultation'=>'مشاوره',
                         'presenceService'=>'خدمات حضوری',
                         'name_fa' => 'كلينيک صنعتی سازمانی'
                     ),
-                    'creditManagement' => array(
+                    'CreditManagement' => array(
                         'index' => 1,
-                        'increaseCredit'=>'افزایش اعتبار',
-                        'transactionList'=>'لیست تراکنش ها',
+                        'IncreaseCredit'=>'افزایش اعتبار',
+                        'TransactionList'=>'لیست تراکنش ها',
                         'name_fa' => 'مدیریت اعتبار'
                     ),
 
-                    'profile' => array(
+                    'Profile' => array(
                         'index' => 1,
                         'singleMenu'=>1,
                         'name_fa' => 'مشاهده پرونده'
                     ),
-                    'signout' => array(
+                    'Signout' => array(
                         'index' => 1,
                         'singleMenu'=>1,
                         'name_fa' => 'خروج'
@@ -112,13 +112,6 @@ class UserLevel extends CI_Model
                 break;
             }
 
-            case 'estekhare': {
-                $return = array(
-
-
-                );
-                break;
-            }
             default: {
                 $return = null;
             }
