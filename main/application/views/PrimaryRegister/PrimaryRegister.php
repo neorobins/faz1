@@ -31,9 +31,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/calendar.js"></script>
     <script src="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/calendar-setup.js"></script>
     <script src="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/lang/calendar-fa.js"></script>
-
+    <script src="<?= base_url(); ?>assets/panel_assets/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="<?= base_url(); ?>assets/panel_assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="<?= base_url(); ?>assets/panel_assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
     <script>
         $(function () {
+            $("[data-mask]").inputmask();
             //iCheck for checkbox and radio inputs
             $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
                 checkboxClass: 'icheckbox_minimal-blue',
@@ -90,9 +93,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group">
                     <label for="birthday" class="col-sm-2 control-label">تاريخ تولد</label>
 
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="birthday" id="birthday2" placeholder=""
-                               value=""><img id="date_btn_1"
+                    <div class="col-sm-3">
+                        <input type="text" style="text-align: left;direction: ltr" class="form-control" name="birthday" id="birthday2" placeholder=""
+                               data-inputmask='"mask": "9999-99-99"' data-mask><img id="date_btn_1"
                                              src="<?= base_url('assets/panel_assets/images/calendar24.png'); ?>"/>
                     </div>
                     <script type="text/javascript">
@@ -109,18 +112,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group" style="padding-top: 50px;">
                     <label for="lastName" class="col-sm-2 control-label">شماره موبایل</label>
 
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="lastName" placeholder="">
+                    <div class="col-sm-3">
+                        <input type="text" style="text-align: left;direction: ltr" class="form-control" data-inputmask='"mask": "0999-999-9999"' data-mask>
                     </div>
                 </div>
 
                 <div class="form-group" style="padding-top: 50px;">
                     <label for="lastName" class="col-sm-2 control-label">پست الکترونیکی</label>
 
-                    <div class="col-sm-10">
-                        <input type="text" id="email" onblur="checkE();" class="form-control" name="lastName" placeholder="">
+                    <div class="col-sm-3">
+                        <input type="text" style="text-align: left;direction: ltr;" id="email" onblur="checkE();" class="form-control" name="lastName" placeholder="">
                     </div>
                 </div>
+                <br/>
+                <br/>
                 <a href="<?=base_url("RegisterAdult");?>"><button type="button" class="btn btn-primary">ثبت نام</button></a>
             </form>
         </div>
