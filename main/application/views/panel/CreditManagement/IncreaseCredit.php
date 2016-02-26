@@ -3,7 +3,7 @@
         <div class="col-lg-3 col-xs-6">
             <div class="small-box bg-green">
                 <div class="inner">
-                    <h3>525000 <sup style="font-size: 20px">ریال</sup></h3>
+                    <h3>2500000 <sup style="font-size: 20px">ریال</sup></h3>
 
                     <p>اعتبار فعلی حساب</p>
                 </div>
