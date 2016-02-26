@@ -60,9 +60,11 @@
                         <td><input type="text" class="form-control" name="d13" placeholder=""></td>
                         <td>
                             <div class="col-sm-10">
-                                <input type="radio" class="minimal" name="d14" value="1"> خوب&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d14" value="2"> متوسط&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d14" value="3"> بد&nbsp&nbsp
+                                <select>
+                                    <option>خوب</option>
+                                    <option>متوسط</option>
+                                    <option>بد</option>
+                                </select>
                             </div>
                         </td>
                     </tr>
@@ -75,9 +77,11 @@
                         <td><input type="text" class="form-control" name="d18" placeholder=""></td>
                         <td>
                             <div class="col-sm-10">
-                                <input type="radio" class="minimal" name="d19" value="1"> خوب&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d19" value="2"> متوسط&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d19" value="3"> بد&nbsp&nbsp
+                                <select>
+                                    <option>خوب</option>
+                                    <option>متوسط</option>
+                                    <option>بد</option>
+                                </select>
                             </div>
                         </td>
                     </tr>
@@ -90,9 +94,11 @@
                         <td><input type="text" class="form-control" name="d23" placeholder=""></td>
                         <td>
                             <div class="col-sm-10">
-                                <input type="radio" class="minimal" name="d24" value="1"> خوب&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d24" value="2"> متوسط&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d24" value="3"> بد&nbsp&nbsp
+                                <select>
+                                    <option>خوب</option>
+                                    <option>متوسط</option>
+                                    <option>بد</option>
+                                </select>
                             </div>
                         </td>
                     </tr>
@@ -105,9 +111,11 @@
                         <td><input type="text" class="form-control" name="d28" placeholder=""></td>
                         <td>
                             <div class="col-sm-10">
-                                <input type="radio" class="minimal" name="d30" value="1"> خوب&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d30" value="2"> متوسط&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d30" value="3"> بد&nbsp&nbsp
+                                <select>
+                                    <option>خوب</option>
+                                    <option>متوسط</option>
+                                    <option>بد</option>
+                                </select>
                             </div>
                         </td>
                     </tr>
@@ -120,9 +128,11 @@
                         <td><input type="text" class="form-control" name="d34" placeholder=""></td>
                         <td>
                             <div class="col-sm-10">
-                                <input type="radio" class="minimal" name="d35" value="1"> خوب&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d35" value="2"> متوسط&nbsp&nbsp
-                                <input type="radio" class="minimal" name="d35" value="3"> بد&nbsp&nbsp
+                                <select>
+                                    <option>خوب</option>
+                                    <option>متوسط</option>
+                                    <option>بد</option>
+                                </select>
                             </div>
                         </td>
                     </tr>

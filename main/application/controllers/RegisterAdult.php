@@ -15,7 +15,8 @@ class RegisterAdult extends CI_Controller
             array(
                 'part1'=>$this->load->view('panel/RegisterAdult/Part1',array(),true),
                 'part2'=>$this->load->view('panel/RegisterAdult/Part2',array(),true),
-                'part3'=>$this->load->view('panel/RegisterAdult/Part3',array(),true)
+                'part3'=>$this->load->view('panel/RegisterAdult/Part3',array(),true),
+                'part4'=>$this->load->view('panel/RegisterAdult/Part4',array(),true)
             ),
             array(
                 'plugins/jdatepicker/skins/aqua/theme.css',
