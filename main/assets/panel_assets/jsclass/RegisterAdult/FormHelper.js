@@ -16,6 +16,7 @@ function previousStepRegister() {
         } else {
             $("#next_step").show();
         }
+
     }
 }
 
