@@ -29,6 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             });
         }
+
         ini_events($('#external-events div.external-event'));
 
         /* initialize the calendar
@@ -45,57 +46,87 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 right: 'month,agendaWeek,agendaDay'
             },
             buttonText: {
-                today: 'today',
-                month: 'month',
-                week: 'week',
-                day: 'day'
+                today: 'امروز',
+                month: 'ماه',
+                week: 'هفته',
+                day: 'روز'
             },
             //Random default events
             events: [
+//                {
+//                    title: 'All Day Event',
+//                    start: new Date(y, m, 1),
+//                    backgroundColor: "#f56954", //red
+//                    borderColor: "#f56954" //red
+//                },
+//                {
+//                    title: 'Long Event',
+//                    start: new Date(y, m, d - 5),
+//                    end: new Date(y, m, d - 2),
+//                    backgroundColor: "#f39c12", //yellow
+//                    borderColor: "#f39c12" //yellow
+//                },
                 {
-                    title: 'All Day Event',
-                    start: new Date(y, m, 1),
+                    title: 'ثبت نام در سایت آتیه و تشکیل پرونده',
+                    start: new Date(y, m, d - 5, 10, 30),
+                    allDay: false,
                     backgroundColor: "#f56954", //red
-                    borderColor: "#f56954" //red
+                    borderColor: "#f56954", //red
                 },
                 {
-                    title: 'Long Event',
-                    start: new Date(y, m, d - 5),
-                    end: new Date(y, m, d - 2),
+                    title: 'گذراندن آزمون ورودی',
+                    start: new Date(y, m, d - 5, 15, 47),
+                    end: new Date(y, m, d - 5, 16, 23),
+                    allDay: false,
                     backgroundColor: "#f39c12", //yellow
-                    borderColor: "#f39c12" //yellow
+                    borderColor: "#f39c12", //yellow
                 },
                 {
-                    title: 'Meeting',
-                    start: new Date(y, m, d, 10, 30),
+                    title: 'انجام ارزیابی توسط مدیر',
+                    start: new Date(y, m, d - 3, 17, 45),
                     allDay: false,
                     backgroundColor: "#0073b7", //Blue
                     borderColor: "#0073b7" //Blue
                 },
                 {
-                    title: 'Lunch',
-                    start: new Date(y, m, d, 12, 0),
-                    end: new Date(y, m, d, 14, 0),
+                    title: 'مراجعه ی حضوری به آتیه برای انجام آزمون',
+                    start: new Date(y, m, d - 1, 8, 30),
+                    end: new Date(y, m, d-1, 12),
                     allDay: false,
                     backgroundColor: "#00c0ef", //Info (aqua)
-                    borderColor: "#00c0ef" //Info (aqua)
+                    borderColor: "#00c0ef", //Info (aqua)
                 },
                 {
-                    title: 'Birthday Party',
-                    start: new Date(y, m, d + 1, 19, 0),
-                    end: new Date(y, m, d + 1, 22, 30),
+                    title: 'رواندرمانی',
+                    start: new Date(y, m, d+2, 10, 30),
                     allDay: false,
                     backgroundColor: "#00a65a", //Success (green)
-                    borderColor: "#00a65a" //Success (green)
+                    borderColor: "#00a65a", //Success (green)
                 },
-                {
-                    title: 'Click for Google',
-                    start: new Date(y, m, 28),
-                    end: new Date(y, m, 29),
-                    url: 'http://google.com/',
-                    backgroundColor: "#3c8dbc", //Primary (light-blue)
-                    borderColor: "#3c8dbc" //Primary (light-blue)
-                }
+//                {
+//                    title: 'Lunch',
+//                    start: new Date(y, m, d, 12, 0),
+//                    end: new Date(y, m, d, 14, 0),
+//                    allDay: false,
+//                    backgroundColor: "#00c0ef", //Info (aqua)
+//                    borderColor: "#00c0ef" //Info (aqua)
+//                },
+//                {
+//                    title: 'Birthday Party',
+//                    start: new Date(y, m, d + 1, 19, 0),
+//                    end: new Date(y, m, d + 1, 22, 30),
+//                    allDay: false,
+//                    backgroundColor: "#00a65a", //Success (green)
+//                    borderColor: "#00a65a" //Success (green)
+//                },
+//                {
+//                    title: 'Click for Google',
+//                    start: new Date(y, m, 28),
+//                    end: new Date(y, m, 29),
+//                    url: 'http://google.com/',
+//                    backgroundColor: "#3c8dbc", //Primary (light-blue)
+//                    borderColor: "#3c8dbc" //Primary (light-blue)
+//                }
             ],
             editable: true,
             droppable: true, // this allows things to be dropped onto the calendar !!!
@@ -147,7 +178,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             //Create events
             var event = $("<div />");
-            event.css({"background-color": currColor, "border-color": currColor, "color": "#fff"}).addClass("external-event");
+            event.css({
+                "background-color": currColor,
+                "border-color": currColor,
+                "color": "#fff"
+            }).addClass("external-event");
             event.html(val);
             $('#external-events').prepend(event);
 
@@ -166,20 +201,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-3">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h4 class="box-title">Draggable Events</h4>
+                    <h4 class="box-title">رویداد ها</h4>
                 </div>
                 <div class="box-body">
                     <!-- the events -->
                     <div id="external-events">
-                        <div class="external-event bg-green">Lunch</div>
-                        <div class="external-event bg-yellow">Go home</div>
-                        <div class="external-event bg-aqua">Do homework</div>
-                        <div class="external-event bg-light-blue">Work on UI design</div>
-                        <div class="external-event bg-red">Sleep tight</div>
+                        <div class="external-event bg-green">رواندرمانی</div>
+                        <div class="external-event bg-yellow">روانپزشکی</div>
+                        <div class="external-event bg-aqua">مشاوره با کلینیک خانواده</div>
+                        <div class="external-event bg-light-blue">آزمون های روانشناختی</div>
+                        <div class="external-event bg-red">کمیسیون تشخیص</div>
                         <div class="checkbox">
                             <label for="drop-remove">
                                 <input type="checkbox" id="drop-remove">
-                                remove after drop
+                                حذف پس از رها کردن
                             </label>
                         </div>
                     </div>
@@ -187,7 +222,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div><!-- /. box -->
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Create Event</h3>
+                    <h3 class="box-title">اضافه کردن رویداد</h3>
                 </div>
                 <div class="box-body">
                     <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
@@ -209,7 +244,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </ul>
                     </div><!-- /btn-group -->
                     <div class="input-group">
-                        <input id="new-event" type="text" class="form-control" placeholder="Event Title">
+                        <input id="new-event" type="text" class="form-control" placeholder="عنوان رویداد">
 
                         <div class="input-group-btn">
                             <button id="add-new-event" type="button" class="btn btn-primary btn-flat">Add</button>
