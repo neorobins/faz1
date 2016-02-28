@@ -1,4 +1,3 @@
-
 <div id="part1">
     <div class="box-header with-border">
         <h3 class="box-title">اطلاعات شخصی</h3>
@@ -22,8 +21,10 @@
             <label for="gender" class="col-sm-2 control-label">جنسیت</label>
 
             <div class="col-sm-10">
-                <input type="radio" class="minimal" name="gender" value="male"> مذکر
-                <input type="radio" class="minimal" name="gender" value="female"> مونث
+                <input id="male" type="radio" class="minimal" name="gender" value="male">
+                <label for="male">مذکر</label>
+                <input id="female" type="radio" class="minimal" name="gender" value="female">
+                <label for="female">مونث</label>
             </div>
         </div>
         <div class="form-group">
@@ -125,8 +126,10 @@
             <label for="getSMS" class="col-sm-2 control-label">دریافت پیام کوتاه</label>
 
             <div class="col-sm-10">
-                <input type="radio" class="minimal" name="getSMS" value="yes" checked> بله
-                <input type="radio" class="minimal" name="getSMS" value="no"> خیر
+                <input id="sms_yes" type="radio" class="minimal" name="getSMS" value="yes" checked>
+                <label for="sms_yes">بله</label>
+                <input id="sms_no" type="radio" class="minimal" name="getSMS" value="no">
+                <label for="sms_no">خیر</label>
             </div>
         </div>
         <div class="form-group">
@@ -140,8 +143,10 @@
             <label for="getEmail" class="col-sm-2 control-label">دریافت پست الکترونیکی</label>
 
             <div class="col-sm-10">
-                <input type="radio" class="minimal" name="getEmail" value="yes" checked> بله
-                <input type="radio" class="minimal" name="getEmail" value="no"> خیر
+                <input id="email_yes" type="radio" class="minimal" name="getEmail" value="yes" checked>
+                <label for="email_yes">بله</label>
+                <input id="email_no" type="radio" class="minimal" name="getEmail" value="no">
+                <label for="email_no">خیر</label>
             </div>
         </div>
         <br/>
@@ -184,6 +189,7 @@
 
         <div class="form-group">
             <label for="d5" class="col-sm-2 control-label">متخصصین دیگر</label>
+
             <div class="col-sm-10">
                 <label class="">
                     <input type="checkbox" class="minimal" name="d5">&nbsp&nbsp
@@ -193,6 +199,7 @@
         </div>
         <div class="form-group">
             <label for="d7" class="col-sm-2 control-label">دوستان و آشنایان</label>
+
             <div class="col-sm-10">
                 <label class="">
                     <input type="checkbox" class="minimal" name="d7">&nbsp&nbsp
@@ -202,6 +209,7 @@
         </div>
         <div class="form-group">
             <label for="d5" class="col-sm-2 control-label">اینترنت</label>
+
             <div class="col-sm-10">
                 <label class="">
                     <input type="checkbox" class="minimal" name="d5">&nbsp&nbsp
@@ -211,6 +219,7 @@
         </div>
         <div class="form-group">
             <label for="d5" class="col-sm-2 control-label">مدرسه یا مهدکودک</label>
+
             <div class="col-sm-10">
                 <label class="">
                     <input type="checkbox" class="minimal" name="d5">&nbsp&nbsp
@@ -220,6 +229,7 @@
         </div>
         <div class="form-group">
             <label for="d5" class="col-sm-2 control-label">رسانه های عمومی</label>
+
             <div class="col-sm-10">
                 <label class="">
                     <input type="checkbox" class="minimal" name="d5">&nbsp&nbsp
@@ -229,6 +239,7 @@
         </div>
         <div class="form-group">
             <label for="d5" class="col-sm-2 control-label">مراجعین قبلی آتیه</label>
+
             <div class="col-sm-10">
                 <label class="">
                     <input type="checkbox" class="minimal" name="d5">&nbsp&nbsp
@@ -238,6 +249,7 @@
         </div>
         <div class="form-group">
             <label for="d5" class="col-sm-2 control-label">غیره</label>
+
             <div class="col-sm-10">
                 <label class="">
                     <input type="checkbox" class="minimal" name="d5">&nbsp&nbsp

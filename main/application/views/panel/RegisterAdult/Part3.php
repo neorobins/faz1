@@ -1,4 +1,4 @@
-<div id="part3" style="display: none;">
+<div id="part3">
     <div class="box-header with-border">
         <h3 class="box-title">تاریخچه ی درمانی</h3>
     </div><!-- /.box-header -->

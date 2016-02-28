@@ -1,4 +1,4 @@
-<div id="part2" style="display: none;">
+<div id="part2">
     <div class="box-header with-border">
         <h3 class="box-title">تاریخچه خانوادگی</h3>
     </div><!-- /.box-header -->

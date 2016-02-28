@@ -5,6 +5,11 @@ var total = 1;
 var currentPart = 1;
 function formHelper(totalPart) {
     total = totalPart;
+    for (var i = 2; i <= total; i++) {
+        $("#part" + i).hide();
+    }
+    $("#next_step").show();
+    $("#submit").hide();
 }
 
 function previousStepRegister() {

@@ -1,4 +1,4 @@
-<div id="part4" style="display: none;">
+<div id="part4">
     <div class="box-header with-border">
         <h3 class="box-title">وضعیت سلامت عمومی</h3>
     </div><!-- /.box-header -->
