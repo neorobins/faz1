@@ -13,7 +13,7 @@
 <script src="<?= base_url(); ?>assets/panel_assets/dist/js/respond.min.js"></script>
 <![endif]-->
 <?php
-foreach($stylesheet as $item){
- echo   '<link rel="stylesheet" href="'.base_url('assets/panel_assets/'.$item).'">'.PHP_EOL;
+foreach ($stylesheet as $item => $value) {
+    echo '<link rel="stylesheet" href="' . base_url('assets/panel_assets/' . (is_numeric($item) ? $value : $item)) . '" ' . ' ' . (is_numeric($item) == false ? $value : '') . '>' . PHP_EOL;
 }
 ?>
