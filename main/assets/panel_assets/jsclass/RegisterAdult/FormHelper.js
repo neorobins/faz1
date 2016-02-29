@@ -18,10 +18,9 @@ function previousStepRegister() {
         $("#part" + currentPart).show();
         if (currentPart == 1) {
             $("#previous_step").hide();
-        } else {
-            $("#next_step").show();
         }
-
+        $("#next_step").show();
+        window.scrollTo(0, 0);
     }
 }
 
@@ -32,8 +31,8 @@ function nextStepRegister() {
         if (currentPart == total) {
             $("#next_step").hide();
             $("#submit").show();
-        } else {
-            $("#previous_step").show();
         }
+        $("#previous_step").show();
+        window.scrollTo(0, 0);
     }
 }
