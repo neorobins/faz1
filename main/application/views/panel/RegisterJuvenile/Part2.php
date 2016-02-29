@@ -92,7 +92,7 @@
                     <div class="box-body">
 
                         <div class="form-group">
-                            <label for="momOccupation" class="col-sm-8 control-label">آیا در خصوص کودکتان قبلا
+                            <label class="col-sm-8 control-label">آیا در خصوص کودکتان قبلا
                                 به روان شناس یا روان پزشک مراجعه کرده اید؟</label>
 
                             <div class="col-sm-4">
