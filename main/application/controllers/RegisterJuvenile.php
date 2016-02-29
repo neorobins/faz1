@@ -17,7 +17,11 @@ class RegisterJuvenile extends CI_Controller
                 'part2'=>$this->load->view('panel/RegisterJuvenile/Part2',array(),true),
                 'part3'=>$this->load->view('panel/RegisterJuvenile/Part3',array(),true),
                 'part4'=>$this->load->view('panel/RegisterJuvenile/Part4',array(),true),
-                'part5'=>$this->load->view('panel/RegisterJuvenile/Part5',array(),true)
+                'part5'=>$this->load->view('panel/RegisterJuvenile/Part5',array(),true),
+                'part6'=>$this->load->view('panel/RegisterJuvenile/Part6',array(),true),
+                'part7'=>$this->load->view('panel/RegisterJuvenile/Part7',array(),true),
+                'part8'=>$this->load->view('panel/RegisterJuvenile/Part8',array(),true),
+                'part9'=>$this->load->view('panel/RegisterJuvenile/Part9',array(),true)
             ),
             array(
 //                'plugins/jdatepicker/skins/aqua/theme.css',

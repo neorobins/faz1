@@ -8,7 +8,7 @@
         });
     });
     $(function () {
-        formHelper(2);
+        formHelper(9);
         //iCheck for checkbox and radio inputs
         $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
             checkboxClass: 'icheckbox_minimal-blue',
@@ -26,8 +26,14 @@
     <form class="form-horizontal">
 
         <?=$part1?>
-
         <?=$part2?>
+        <?=$part3?>
+        <?=$part4?>
+        <?=$part5?>
+        <?=$part6?>
+        <?=$part7?>
+        <?=$part8?>
+        <?=$part9?>
 
         <div class="box-footer">
             <button type="button" id="previous_step" class="btn btn-info pull-right" style="display: none;" onclick="previousStepRegister();">مرحله ی قبل
