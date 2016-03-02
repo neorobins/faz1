@@ -92,4 +92,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 | No description
 |
 */
-defined('ASSETS_LOCATION') OR define('ASSETS_LOCATION', 'http://localhost/atie/faz1/admin/assets/');
+defined('ASSETS_LOCATION') OR define('ASSETS_LOCATION', 'http://localhost/atie/faz1/assets/');
