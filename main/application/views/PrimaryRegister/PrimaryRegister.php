@@ -7,33 +7,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="UTF-8">
     <title><?= $this->lang->line('header'); ?></title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/dist/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/dist/css/ionicons.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/dist/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/dist/fonts/fonts-fa.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/dist/css/bootstrap-rtl.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/plugins/iCheck/all.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/skins/aqua/theme.css">
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/dist/js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/dist/fonts/fonts-fa.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/dist/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/plugins/iCheck/all.css">
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION; ?>panel_assets/plugins/jdatepicker/skins/aqua/theme.css">
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/dist/js/jquery-ui.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="<?= base_url(); ?>assets/panel_assets/dist/js/html5shiv.min.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/dist/js/respond.min.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/dist/js/html5shiv.min.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/dist/js/respond.min.js"></script>
     <![endif]-->
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/iCheck/icheck.min.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/jsclass/PrimaryRegister/MelliCode.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/jalali.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/calendar.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/calendar-setup.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/jdatepicker/lang/calendar-fa.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/input-mask/jquery.inputmask.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-    <script src="<?= base_url(); ?>assets/panel_assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/iCheck/icheck.min.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/jsclass/PrimaryRegister/MelliCode.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/jdatepicker/jalali.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/jdatepicker/calendar.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/jdatepicker/calendar-setup.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/jdatepicker/lang/calendar-fa.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/input-mask/jquery.inputmask.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="<?= ASSETS_LOCATION; ?>panel_assets/plugins/input-mask/jquery.inputmask.extensions.js"></script>
     <script>
         $(function () {
             $("[data-mask]").inputmask();
@@ -96,7 +96,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-sm-3">
                         <input type="text" style="text-align: left;direction: ltr" class="form-control" name="birthday" id="birthday2" placeholder=""
                                data-inputmask='"mask": "9999-99-99"' data-mask><img id="date_btn_1"
-                                             src="<?= base_url('assets/panel_assets/images/calendar24.png'); ?>"/>
+                                             src="<?= ASSETS_LOCATION.'panel_assets/images/calendar24.png'; ?>"/>
                     </div>
                     <script type="text/javascript">
                         Calendar.setup({
