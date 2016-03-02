@@ -14,6 +14,6 @@
 <![endif]-->
 <?php
 foreach ($stylesheet as $item => $value) {
-    echo '<link rel="stylesheet" href="' . base_url('assets/panel_assets/' . (is_numeric($item) ? $value : $item)) . '" ' . ' ' . (is_numeric($item) == false ? $value : '') . '>' . PHP_EOL;
+    echo '<link rel="stylesheet" href="' . ASSETS_LOCATION.'/panel_assets/' . (is_numeric($item) ? $value : $item) . '" ' . ' ' . (is_numeric($item) == false ? $value : '') . '>' . PHP_EOL;
 }
 ?>

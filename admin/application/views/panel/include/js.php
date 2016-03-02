@@ -4,6 +4,6 @@
 <script src="<?= ASSETS_LOCATION; ?>panel_assets/dist/js/app.min.js"></script>
 <?php
 foreach ($js as $item => $value) {
-    echo '<script src="' . (is_numeric($item) ? base_url('assets/panel_assets/' . $value) : (!$value?$item:'')) . '"></script>' . PHP_EOL;
+    echo '<script src="' . (is_numeric($item) ? ASSETS_LOCATION.'/panel_assets/' . $value : (!$value?$item:'')) . '"></script>' . PHP_EOL;
 }
 ?>
