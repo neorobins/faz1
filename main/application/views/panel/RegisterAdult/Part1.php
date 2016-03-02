@@ -36,7 +36,7 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="birthday" id="birthday2" placeholder=""
                            value=""><img id="date_btn_1"
-                                         src="<?= base_url('assets/panel_assets/images/calendar24.png'); ?>"/>
+                                         src="<?= ASSETS_LOCATION . '/panel_assets/images/calendar24.png'; ?>"/>
                 </div>
                 <script type="text/javascript">
                     Calendar.setup({

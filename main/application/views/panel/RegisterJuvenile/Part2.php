@@ -89,13 +89,14 @@
             <div class="box-body">
 
                 <div class="box box-info">
+                    <div class="box-header ">
+                        <h3 class="box-title">آیا در خصوص کودکتان قبلا به روان شناس یا روان پزشک مراجعه کرده اید؟</h3>
+                    </div><!-- /.box-header -->
+
                     <div class="box-body">
 
                         <div class="form-group">
-                            <label class="col-sm-8 control-label">آیا در خصوص کودکتان قبلا
-                                به روان شناس یا روان پزشک مراجعه کرده اید؟</label>
-
-                            <div class="col-sm-4">
+                            <div class="col-sm-10">
                                 <label>
                                     بله
                                     <input type="radio" class="minimal" name="getSMS25" value="yes" checked="">
