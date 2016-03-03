@@ -96,7 +96,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-sm-3">
                         <input type="text" style="text-align: left;direction: ltr" class="form-control" name="birthday" id="birthday2" placeholder=""
                                data-inputmask='"mask": "9999-99-99"' data-mask><img id="date_btn_1"
+<<<<<<< HEAD
                                              src="<?= ASSETS_LOCATION; ?>panel_assets/images/calendar24.png"/>
+=======
+                                             src="<?= ASSETS_LOCATION.'panel_assets/images/calendar24.png'; ?>"/>
+>>>>>>> origin/Mohammad-Amin
                     </div>
                     <script type="text/javascript">
                         Calendar.setup({
