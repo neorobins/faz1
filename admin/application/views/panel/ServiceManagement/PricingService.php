@@ -13,6 +13,7 @@
                         <th>نوع</th>
                         <th>بخش</th>
                         <th>قیمت ریال</th>
+                        <th>ویرایش</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -22,6 +23,7 @@
                         <td>آزمون</td>
                         <td>خدمات عمومی</td>
                         <td>40000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1002</td>
@@ -29,6 +31,7 @@
                         <td>آزمون</td>
                         <td>خدمات عمومی</td>
                         <td>20000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1003</td>
@@ -36,6 +39,7 @@
                         <td>آزمون</td>
                         <td>خدمات عمومی</td>
                         <td>0</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1004</td>
@@ -43,6 +47,7 @@
                         <td>آزمون</td>
                         <td>خدمات عمومی</td>
                         <td>80000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1005</td>
@@ -50,6 +55,7 @@
                         <td>آزمون</td>
                         <td>کلینیک اختلالات خلقی</td>
                         <td>40000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1006</td>
@@ -57,6 +63,7 @@
                         <td>آزمون</td>
                         <td>کلینیک اختلالات خلقی</td>
                         <td>90000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1007</td>
@@ -64,6 +71,7 @@
                         <td>مشاوره</td>
                         <td>کلینیک تحول و تکامل</td>
                         <td>120000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1008</td>
@@ -71,6 +79,7 @@
                         <td>مشاوره</td>
                         <td>کلینیک اختلالات خلقی</td>
                         <td>120000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1009</td>
@@ -78,6 +87,7 @@
                         <td>آزمون</td>
                         <td>کلینیک اختلالات خلقی</td>
                         <td>110000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
                     <tr>
                         <td>1010</td>
@@ -85,6 +95,7 @@
                         <td>آزمون</td>
                         <td>کلینیک اختلالات خلقی</td>
                         <td>110000</td>
+                        <td><a href="<?=base_url('ServiceManagement/editService/1001');?>" ><i class="fa fa-fw fa-cog"></i>ویرایش</a></td>
                     </tr>
 
 

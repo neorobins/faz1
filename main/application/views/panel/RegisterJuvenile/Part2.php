@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             مشکلات تحصیلی (دیکته ، ریاضی ، روخوانی)
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -29,7 +29,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             مشکلات توجه و تمرکز (حواس پرتی و بی دقتی)
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             مشکلات رفتاری (پرخاشگری و نافرمانی)
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -51,7 +51,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             مشکلات اضطرابی (نگرانی و خجالتی بودن)
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -62,7 +62,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             مشکلات عاطفی و هیجانی (افسردگی)
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -73,7 +73,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             بررسی وضعیت روان شناختی (چکاپ)
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -131,7 +131,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             مشاهده و روان درمانی
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -142,7 +142,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             کاردرمانی
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -153,7 +153,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             گفتار درمانی
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">
@@ -164,7 +164,7 @@
                     <div class="form-group">
                         <label class="col-sm-5">
                             دارو درمانی
-                            <input type="checkbox">
+                            <input type="checkbox" class="minimal">
                         </label>
 
                         <div class="col-sm-7">

@@ -14,6 +14,7 @@ class UserLevel extends CI_Model
     }
 
 
+
 //in method bar asas section_id controller hayee ra ke karbar dastrasi darad barrasi mikonad
 //felan az hard code baraye dastrasi ha estefade mishe
     public function getSectionAccess($section_id)

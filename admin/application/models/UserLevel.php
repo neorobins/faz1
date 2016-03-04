@@ -22,8 +22,7 @@ class UserLevel extends CI_Model
             case 'patient': {
                 $return = array(
                     'ServiceManagement' => array(
-                        'index' => 1,
-                        'pricingService'=>'لیست خدمات',
+                        'index' => 'لیست خدمات',
                         'name_fa' => 'مدیریت خدمات'
                     ),
                     'UserManagement' => array(
