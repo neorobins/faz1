@@ -113,6 +113,33 @@ class UserLevel extends CI_Model
                 break;
             }
 
+            case 'education':{
+                $return = array(
+                    'CourseManagement/allCourse' => array(
+                        'index' => 1,
+                        'singleMenu'=>1,
+                        'name_fa' => 'لیست دوره ها'
+                    ),
+                    'CourseManagement/registerCourse' => array(
+                        'index' => 1,
+                        'singleMenu'=>1,
+                        'name_fa' => 'دوره های ثبت نام شده'
+                    ),
+                    'CreditManagement' => array(
+                        'index' => 1,
+                        'IncreaseCredit'=>'افزایش اعتبار',
+                        'TransactionList'=>'لیست تراکنش ها',
+                        'name_fa' => 'مدیریت اعتبار'
+                    ),
+                    'Signout' => array(
+                        'index' => 1,
+                        'singleMenu'=>1,
+                        'name_fa' => 'خروج'
+                    )
+                );
+                break;
+            }
+
             default: {
                 $return = null;
             }

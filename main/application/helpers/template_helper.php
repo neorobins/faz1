@@ -12,8 +12,9 @@ function getMainVars()
 {
     $ci = get_instance();
     $ci->load->model('UserLevel');
+    $ci->load->library('session');
 
-    $userLevel = $ci->UserLevel->getSectionAccess('patient');
+    $userLevel = $ci->UserLevel->getSectionAccess($ci->session->userdata('panel_type'));
     $title = '';
     if(isset($userLevel[$ci->router->fetch_class()]) && isset($userLevel[$ci->router->fetch_class()]['name_fa'])){
         $title = ' | '.$userLevel[$ci->router->fetch_class()]['name_fa'];
@@ -22,7 +23,7 @@ function getMainVars()
         'title' => "کلينيک آتيه".$title,
         'picture' => "person.png",
         'user_name' => "محمد امین باژند",
-        'section_name_fa' => "پنل",
+        'section_name_fa' => "پنل".' '.($ci->session->userdata('panel_type')=='patient'?'کلینیک':'آموزش'),
         'newMessageNumber' => "1",
         'sideBarMenu' => $userLevel
     );
