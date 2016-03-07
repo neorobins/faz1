@@ -18,7 +18,7 @@
                             <td>111</td>
                             <td>اختلال یادگیری</td>
                             <td>11-12-1395</td>
-                            <td><span class="label label-danger">ثبت نام شده</span></td>
+                            <td><span class="label label-success">ثبت نام شده</span></td>
                             <td>درباره ی دوره</td>
                             <td>
                                 <button class="btn btn-block btn-info btn-xs disabled">ثبت نام</button>
@@ -38,7 +38,7 @@
                             <td>175</td>
                             <td>بی خوابی و راه های غلبه بر آن</td>
                             <td>17-4-1395</td>
-                            <td><span class="label label-success">در حال ثبت نام</span></td>
+                            <td><span class="label label-primary">در حال ثبت نام</span></td>
                             <td>درباره ی دوره</td>
                             <td>
                                 <button class="btn btn-block btn-info btn-xs">ثبت نام</button>
@@ -48,7 +48,7 @@
                             <td>189</td>
                             <td>شیوه ی پذیرش در کنکور سراسری</td>
                             <td>11-2-1395</td>
-                            <td><span class="label label-success">در حال ثبت نام</span></td>
+                            <td><span class="label label-primary">در حال ثبت نام</span></td>
                             <td>درباره ی دوره</td>
                             <td>
                                 <button class="btn btn-block btn-info btn-xs">ثبت نام</button>
