@@ -120,11 +120,6 @@ class UserLevel extends CI_Model
                         'singleMenu'=>1,
                         'name_fa' => 'لیست دوره ها'
                     ),
-                    'CourseManagement/registerCourse' => array(
-                        'index' => 1,
-                        'singleMenu'=>1,
-                        'name_fa' => 'دوره های ثبت نام شده'
-                    ),
                     'CreditManagement' => array(
                         'index' => 1,
                         'IncreaseCredit'=>'افزایش اعتبار',
