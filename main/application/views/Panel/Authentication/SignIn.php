@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="<?= ASSETS_LOCATION ?>panel_assets/dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="<?= ASSETS_LOCATION ?>panel_assets/dist/fonts/fonts-fa.css">
     <link rel="stylesheet" href="<?= ASSETS_LOCATION ?>panel_assets/dist/css/bootstrap-rtl.min.css">
-
+    <link rel="stylesheet" href="<?= ASSETS_LOCATION ?>panel_assets/dist/css/login.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,14 +32,14 @@
 <body class="register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="../../index2.html">ورود به پنل</a>
+        <a href="../../index2.html" style="color: floralwhite;">ورود به آتیه</a>
     </div>
 
     <div class="register-box-body">
         <!--        <p class="login-box-msg">register new </p>-->
-        <form action="<?= base_url('Login/doLogin'); ?>" method="post">
+        <?=form_open('Authentication/signIn/doSignIn')?>
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" style="height: auto;" placeholder="کد ملی یا National ID">
+                <input type="text" class="form-control" style="height: auto;" placeholder="کد ملی">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -66,6 +66,7 @@
             </div>
         </form>
         <a href="login.html" class="text-center">رمز عبورم را فراموش کرده ام</a>
+        <h5 style="color: #9f191f;text-align: center;padding-top: 10px;"><?php if($error===1) {echo 'نام کاربری یا رمز عبور نامعتبر است';}?></h5>
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->
 

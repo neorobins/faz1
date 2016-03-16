@@ -24,7 +24,7 @@
 	nextDayThreshold: '09:00:00', // 9am
 
 	// display
-	defaultView: 'month',
+	defaultView: 'agendaWeek',
 	aspectRatio: 1.35,
 	header: {
 		left: 'title',
@@ -7734,7 +7734,7 @@ function Header(calendar, options) {
 								tm + '-button',
 								tm + '-state-default'
 							];
-
+								
 							button = $( // type="button" so that it doesn't submit a form
 								'<button type="button" class="' + classes.join(' ') + '">' +
 									innerHtml +
@@ -7785,7 +7785,9 @@ function Header(calendar, options) {
 									}
 								);
 
+							if(innerHtml!='هفته' && innerHtml!='ماه' && innerHtml!='روز'){
 							groupChildren = groupChildren.add(button);
+							}
 						}
 					}
 				});

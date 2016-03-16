@@ -390,7 +390,7 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= 'atie_main';
+$config['cookie_prefix']	= 'atie_main_cookie';
 $config['cookie_domain']	= '';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
@@ -438,7 +438,7 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_regenerate' = Regenerate token on every submission
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
-$config['csrf_protection'] = FALSE;
+$config['csrf_protection'] = TRUE;
 $config['csrf_token_name'] = 'atie_csrf_main';
 $config['csrf_cookie_name'] = 'atie_csrf_main_cookie';
 $config['csrf_expire'] = 7200;

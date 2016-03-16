@@ -5,7 +5,7 @@ class Panel extends CI_Controller {
 
     public function index()
     {
-        loadView('panel/home/home',array(),
+        loadView('panel/Home/Home',array(),
             array(
                 'plugins/fullcalendar/fullcalendar.min.css',
                 'plugins/fullcalendar/fullcalendar.print.css' => 'media="print"'
