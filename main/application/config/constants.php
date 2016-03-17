@@ -93,3 +93,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 |
 */
 defined('ASSETS_LOCATION') OR define('ASSETS_LOCATION', 'http://localhost/atie/faz1/assets/');
+define('ENC_KEY','NIGG4BHER5gd9Wj723LF1hWWGuI3heU6');

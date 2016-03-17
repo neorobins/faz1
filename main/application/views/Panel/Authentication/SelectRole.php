@@ -1,8 +1,16 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Mohammad Amin
+ * Date: 17/03/2016
+ * Time: 12:39 PM
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>کلینیک آتیه | ورود</title>
+    <title>کلینیک آتیه | انتخاب بخش</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.4 -->
@@ -37,36 +45,24 @@
 
     <div class="register-box-body">
         <!--        <p class="login-box-msg">register new </p>-->
-        <?=form_open('Authentication/signIn/doSignIn')?>
-            <div class="form-group has-feedback">
-                <input name="national_id" type="text" class="form-control" style="height: auto;" placeholder="کد ملی">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input name="password" type="password" class="form-control" style="height: auto;" placeholder="رمز عبور">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="form-group">
-                <select name="section" class="form-control" style="height: auto; ">
-                    <option value="clinic">بخش کلینیک</option>
-                    <option value="education">بخش آموزش</option>
-                </select>
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input name="remember" type="checkbox"> من را به خاطر بسپار
-                        </label>
-                    </div>
-                </div><!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">ورود</button>
-                </div><!-- /.col -->
-            </div>
+        <?=form_open('Authentication/selectRole/selectRole')?>
+        <div class="form-group">
+            <label>لطفا بخش کاربری را انتخاب نمایید</label>
+            <select name="role" class="form-control" style="height: auto; ">
+                <?php
+                    foreach($roles as $role){
+                        echo "<option value='{$role['role_id']}'>{$role['role_title_fa']}</option>";
+                    }
+
+                ?>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <button type="submit" class="btn btn-primary btn-block btn-flat">ورود</button>
+            </div><!-- /.col -->
+        </div>
         </form>
-        <a href="login.html" class="text-center">رمز عبورم را فراموش کرده ام</a>
-        <h5 style="color: #9f191f;text-align: center;padding-top: 10px;"><?php if($error===1) {echo 'نام کاربری یا رمز عبور نامعتبر است';}?></h5>
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->
 
@@ -87,3 +83,4 @@
 </script>
 </body>
 </html>
+
