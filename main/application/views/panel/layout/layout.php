@@ -121,7 +121,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </aside>
     <div class="control-sidebar-bg"></div>
 </div>
-
 </body>
 
 </html>

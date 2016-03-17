@@ -24,15 +24,15 @@ class RegisterJuvenile extends CI_Controller
                 'part9'=>$this->load->view('panel/RegisterJuvenile/Part9',array(),true)
             ),
             array(
-//                'plugins/jdatepicker/skins/aqua/theme.css',
-//                'plugins/iCheck/all.css'
+                'plugins/jdatepicker/skins/aqua/theme.css',
+                'plugins/iCheck/all.css'
             ),
             array(
-//                'plugins/jdatepicker/jalali.js',
-//                'plugins/jdatepicker/calendar.js',
-//                'plugins/jdatepicker/calendar-setup.js',
-//                'plugins/jdatepicker/lang/calendar-fa.js',
-//                'plugins/iCheck/icheck.min.js',
+                'plugins/jdatepicker/jalali.js',
+                'plugins/jdatepicker/calendar.js',
+                'plugins/jdatepicker/calendar-setup.js',
+                'plugins/jdatepicker/lang/calendar-fa.js',
+                'plugins/iCheck/icheck.min.js',
                 'jsclass/RegisterAdult/FormHelper.js'
             )
         );

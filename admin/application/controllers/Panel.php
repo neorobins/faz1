@@ -5,13 +5,15 @@ class Panel extends CI_Controller {
 
     public function index()
     {
-        loadView('panel/home/home',array(),
+        loadView('panel/Home/Home',array(),
             array(
                 'plugins/fullcalendar/fullcalendar.min.css',
                 'plugins/fullcalendar/fullcalendar.print.css' => 'media="print"'
             ),
             array(
-//                'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js' => false,
+                'plugins/chartjs/Chart.min.js',
+                'jsclass/Admin/BarChart/BarChartHandler.js',
+                'dist/js/demo.js',
                 'jsclass/Calendar/moment.min.js',
                 'plugins/fullcalendar/fullcalendar.min.js'
             )

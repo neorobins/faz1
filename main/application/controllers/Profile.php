@@ -20,7 +20,8 @@ class Profile extends CI_Controller
             array(
 //                'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js' => false,
                 'jsclass/Calendar/moment.min.js',
-                'plugins/fullcalendar/fullcalendar.min.js'
+                'jsclass/Calendar/CalendarHandler.js',
+                'plugins/fullcalendar/fullcalendar.js',
             )
         );
     }

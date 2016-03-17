@@ -3,8 +3,8 @@
 /**
  * Created by PhpStorm.
  * User: Mohammad Amin
- * Date: 15/10/2015
- * Time: 08:12 PM
+ * Date: 16/03/2016
+ * Time: 08:12 AM
  */
 class UserLevel extends CI_Model
 {
@@ -12,6 +12,7 @@ class UserLevel extends CI_Model
     {
         parent::__construct();
     }
+
 
 
 //in method bar asas section_id controller hayee ra ke karbar dastrasi darad barrasi mikonad
@@ -108,6 +109,28 @@ class UserLevel extends CI_Model
                         'name_fa' => 'خروج'
                     )
 
+                );
+                break;
+            }
+
+            case 'education':{
+                $return = array(
+                    'CourseManagement/allCourse' => array(
+                        'index' => 1,
+                        'singleMenu'=>1,
+                        'name_fa' => 'لیست دوره ها'
+                    ),
+                    'CreditManagement' => array(
+                        'index' => 1,
+                        'IncreaseCredit'=>'افزایش اعتبار',
+                        'TransactionList'=>'لیست تراکنش ها',
+                        'name_fa' => 'مدیریت اعتبار'
+                    ),
+                    'Signout' => array(
+                        'index' => 1,
+                        'singleMenu'=>1,
+                        'name_fa' => 'خروج'
+                    )
                 );
                 break;
             }

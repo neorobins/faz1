@@ -8,11 +8,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ServiceManagement extends CI_Controller {
+class UserManagement extends CI_Controller {
 
-    public function index()
+    public function userList()
     {
-        loadView('panel/ServiceManagement/PricingService',array(),
+        loadView('panel/UserManagement/UserList',array(),
             array(
                 'plugins/datatables/dataTables.bootstrap.css'
             ),
@@ -20,17 +20,6 @@ class ServiceManagement extends CI_Controller {
                 'plugins/datatables/jquery.dataTables.min.js',
                 'dist/js/demo.js',
                 'plugins/datatables/dataTables.bootstrap.min.js'
-            )
-        );
-    }
-
-    public function editService($service_id=null){
-        if($service_id==null)
-            redirect('ServiceManagement');
-        loadView('panel/ServiceManagement/EditService',array(),
-            array(
-            ),
-            array(
             )
         );
     }

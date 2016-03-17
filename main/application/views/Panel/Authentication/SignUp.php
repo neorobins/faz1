@@ -60,25 +60,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <h4 class="box-title">لطفا تمامی فیلد های زیر را با دقت تکمیل نمایید</h4><br/>
 
-                <label><span class="glyphicon glyphicon-chevron-left"></span> اگر دارای کد ملی جمهوری اسلامی ایران
-                    نیستید National ID کشور محل سکونت خود را وارد نمایید</label>
-
+                <label><span class="glyphicon glyphicon-chevron-left"></span>پر کردن فیلد های ستاره دار اجباری می
+                    باشد</label>
+                <br>
+                <br>
                 <div class="form-group">
-                    <label for="d5" class="col-sm-2 control-label">کد ملی</label>
+                    <label for="melliCode" class="col-sm-2 control-label">کد ملی**</label>
                     <div class="col-sm-3">
-                            <input type="text" id="melliCode" class="form-control" onblur="checkM();"
-                                   style="text-align: left;direction: ltr;" name="d6" data-inputmask='"mask": "9999999999"' placeholder="کد ملی" data-mask><br/>
+                        <input type="text" id="melliCode" class="form-control" onblur="checkM();"
+                               style="text-align: left;direction: ltr;" name="melliCode" data-inputmask='"mask": "9999999999"'
+                               placeholder="کد ملی" data-mask><br/>
                     </div>
                 </div>
                 <br/>
                 <br/>
-                <br/>
                 <div class="form-group">
-                    <label for="birthday" class="col-sm-2 control-label">تاريخ تولد</label>
+                    <label for="birthday" class="col-sm-2 control-label">تاريخ تولد**</label>
+
                     <div class="col-sm-3">
-                        <input type="text" style="text-align: left;direction: ltr" class="form-control" name="birthday" id="birthday2" placeholder=""
+                        <input type="text" style="text-align: left;direction: ltr" class="form-control" name="birthday"
+                               id="birthday2" placeholder=""
                                data-inputmask='"mask": "9999-99-99"' data-mask><img id="date_btn_1"
-                                             src="<?= ASSETS_LOCATION.'panel_assets/images/calendar24.png'; ?>"/>
+                                                                                    src="<?= ASSETS_LOCATION . 'panel_assets/images/calendar24.png'; ?>"/>
                     </div>
                     <script type="text/javascript">
                         Calendar.setup({
@@ -92,23 +95,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
                 <div class="form-group" style="padding-top: 50px;">
-                    <label for="lastName" class="col-sm-2 control-label">شماره موبایل</label>
-
+                    <label for="phone" class="col-sm-2 control-label">شماره موبایل**</label>
                     <div class="col-sm-3">
-                        <input type="text" style="text-align: left;direction: ltr" class="form-control" data-inputmask='"mask": "0999-999-9999"' data-mask>
+                        <input type="text" name="phone" style="text-align: left;direction: ltr" class="form-control"
+                               data-inputmask='"mask": "0999-999-9999"' data-mask>
                     </div>
                 </div>
 
                 <div class="form-group" style="padding-top: 50px;">
-                    <label for="lastName" class="col-sm-2 control-label">پست الکترونیکی</label>
+                    <label for="email" class="col-sm-2 control-label">پست الکترونیکی</label>
 
                     <div class="col-sm-3">
-                        <input type="text" style="text-align: left;direction: ltr;" id="email" onblur="checkE();" class="form-control" name="lastName" placeholder="">
+                        <input type="text" style="text-align: left;direction: ltr;" id="email" onblur="checkE();"
+                               class="form-control" name="email" placeholder="example@gmail.com">
                     </div>
                 </div>
                 <br/>
                 <br/>
-                <a href="<?=base_url("RegisterAdult");?>"><button type="button" class="btn btn-primary">ثبت نام</button></a>
+                <a href="<?= base_url("RegisterAdult"); ?>">
+                    <button type="button" class="btn btn-primary">ثبت نام</button>
+                </a>
             </form>
         </div>
     </div>
