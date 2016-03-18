@@ -16,28 +16,42 @@ class DBUser extends CI_Model
     public function validateUsernameAndPassword($national_id, $password)
     {
         return ($this->db->select('user_id')
+            ->from('user')
+            ->where('national_id', $national_id)
+            ->where('password', $password)
+            ->where('isarchive','0')
+            ->count_all_results());
+    }
+
+    public function getPrimaryDetail($national_id)
+    {
+        return $this->db->select('user.user_id,user.national_id')
                 ->from('user')
                 ->where('national_id', $national_id)
-                ->where('password', $password)
-                ->count_all_results());
-    }
-
-    public function getPrimaryDetail($national_id){
-        return $this->db->select('user.user_id,user.first_name,user.last_name,user.national_id')
-                ->from('user')
-                ->where('national_id',$national_id)
                 ->get()
                 ->result_array();
     }
 
-    public function getUserRole($national_id){
+    public function getUserRole($national_id)
+    {
         return $this->db->select('role.role_id,role.role_title')
                 ->from('user')
-                ->join('user_role','user.user_id=user_role.user_id')
-                ->join('role','user_role.role_id=role.role_id')
-                ->where('national_id',$national_id)
+                ->join('user_role', 'user.user_id=user_role.user_id')
+                ->join('role', 'user_role.role_id=role.role_id')
+                ->where('national_id', $national_id)
                 ->get()
                 ->result_array();
+    }
+
+    public function registerNewUser($data)
+    {
+        if ($this->db->insert('user', $data)) {
+            return $this->db->select('user_id')
+                    ->from('user')
+                    ->where('national_id', $data['national_id'])
+                    ->get()
+                    ->result_array()[0]['user_id'];
+        }
     }
 
 

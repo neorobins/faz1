@@ -26,6 +26,8 @@ function setAuth($data,$remember)
 {
     $ci = get_instance();
     $ci->load->library('session');
+    $ci->load->model('DBUser');
+
     $ci->session->set_userdata($data);
     if ($remember === '1') {
         $ci->load->library('encrypt');
@@ -39,6 +41,21 @@ function setAuth($data,$remember)
         $ci->load->helper('cookie');
         $ci->input->set_cookie($coo);
     }
+
+    $roles = $ci->DBUser->getUserRole($data['national_id']);
+    if (count($roles) > 1) {
+        redirect('Authentication/selectRole');
+    } elseif (count($roles) == 1) {
+        $ci->session->set_userdata(
+            array(
+                'role_id' => $roles[0]['role_id'],
+                'role_title' => $roles[0]['role_title']
+            )
+        );
+        redirect('Panel');
+    }
+
+    redirect('Authenticate/signIn');
 }
 
 //function isUsernameExist($username){

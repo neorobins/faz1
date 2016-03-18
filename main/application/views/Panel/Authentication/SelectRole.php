@@ -53,7 +53,6 @@
                     foreach($roles as $role){
                         echo "<option value='{$role['role_id']}'>{$this->lang->line($role['role_title'])}</option>";
                     }
-
                 ?>
             </select>
         </div>
@@ -63,6 +62,7 @@
             </div><!-- /.col -->
         </div>
         </form>
+        <h5 style="color: #9f191f;text-align: center;padding-top: 10px;"><?php echo validation_errors(); ?></h5>
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->
 

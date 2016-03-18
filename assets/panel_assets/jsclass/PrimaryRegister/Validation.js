@@ -68,7 +68,7 @@ function checkPhone() {
 
 function checkBirthday() {
     var c = document.getElementById("birthday").value;
-    var regex = /^1[0-9]{3}-[0-9]{2}-[0-9]{2}$/;
+    var regex = /^1[0-9]{3}-[0-3][0-9]-[0-3][0-9]$/;
     if (regex.test(c)) {
         $("#birthday").removeClass("alert-danger");
         return true;

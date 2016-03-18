@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <label for="birthday" class="col-sm-2 control-label">تاريخ تولد</label>
 
                 <div class="col-sm-3">
-                    <input type="text" style="text-align: left;direction: ltr" class="form-control" onblur="checkBirthday();" name="birthday"
+                    <input type="text" style="text-align: left;direction: ltr" class="form-control" name="birthday"
                            id="birthday" placeholder=""
                            data-inputmask='"mask": "9999-99-99"' data-mask><img id="date_btn_1"
                                                                                 src="<?= ASSETS_LOCATION . 'panel_assets/images/calendar24.png'; ?>"/>
@@ -136,7 +136,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <br/>
             <br/>
-            <span id="formError" style="color:red;"></span>
+            <span id="formError" style="color:red;"><?php echo validation_errors(); ?></span>
             <br>
             <button type="button" onclick="submitForm();" class="btn btn-primary">ثبت نام</button>
             </form>

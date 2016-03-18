@@ -39,11 +39,11 @@
         <!--        <p class="login-box-msg">register new </p>-->
         <?=form_open('Authentication/signIn/doSignIn')?>
             <div class="form-group has-feedback">
-                <input name="national_id" type="text" class="form-control" style="height: auto;" placeholder="کد ملی">
+                <input name="national_id" value="<?=$this->session->flashdata('national_id');?>" type="text" class="form-control" style="height: auto;" placeholder="کد ملی">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input name="password" type="password" class="form-control" style="height: auto;" placeholder="رمز عبور">
+                <input name="password" value="<?=$this->session->flashdata('password');?>" type="password" class="form-control" style="height: auto;" placeholder="رمز عبور">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="form-group">
@@ -56,7 +56,7 @@
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input name="remember" type="checkbox"> من را به خاطر بسپار
+                            <input name="remember" type="checkbox" value="1"> من را به خاطر بسپار
                         </label>
                     </div>
                 </div><!-- /.col -->
@@ -66,7 +66,7 @@
             </div>
         </form>
         <a href="login.html" class="text-center">رمز عبورم را فراموش کرده ام</a>
-        <h5 style="color: #9f191f;text-align: center;padding-top: 10px;"><?php if($error===1) {echo 'نام کاربری یا رمز عبور نامعتبر است';}?></h5>
+        <h5 style="color: #9f191f;text-align: center;padding-top: 10px;"><?php echo validation_errors(); ?><br/><?php if($error===1) {echo 'نام کاربری یا رمز عبور نامعتبر است';}?></h5>
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->
 

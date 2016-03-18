@@ -15,62 +15,69 @@ class Authentication extends CI_Controller
         parent::__construct();
         $this->load->helper(array('Identification', 'form', 'security'));
         $this->load->library('form_validation');
-        $this->load->model('DBUser');
-        $this->lang->load('Authentication','persian');
+        $this->load->model(array('DBUser', 'DBRole'));
+        $this->lang->load('Authentication', 'persian');
+        $this->config->set_item('language', 'persian');
     }
 
     public function signUp($action = null)
     {
-        $this->form_validation->set_rules('national_id', 'Username', 'required|trim|max_length[20]|numeric');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim|max_length[70]|matches[passwordRepeat]');
-        $this->form_validation->set_rules('passwordRepeat', 'Password', 'required|trim|max_length[70]');
-        $this->form_validation->set_rules('remember', 'Remember', 'integer|trim');
-        $username = $this->input->post('username', true);
+        $this->form_validation->set_rules('national_id', 'lang:national_id', 'required|trim|max_length[20]|numeric|is_unique[user.national_id]');
+        $this->form_validation->set_rules('password', 'lang:password', 'required|trim|max_length[70]|matches[passwordRepeat]');
+        $this->form_validation->set_rules('passwordRepeat', 'lang:password_repeat', 'required|trim|max_length[70]');
+        $this->form_validation->set_rules('phone', 'lang:phone', 'required|trim|regex_match[/^09[0-9]{2}-[0-9]{3}-[0-9]{4}$/]');
+        $this->form_validation->set_rules('birthday', 'lang:birthday', 'required|trim|regex_match[/^1[0-9]{3}-[0-3][0-9]-[0-3][0-9]$/]');
+        $this->form_validation->set_rules('email', 'lang:email', 'trim|valid_email');
+        $national_id = $this->input->post('national_id', true);
         $password = $this->input->post('password', true);
-        $remember = $this->input->post('remember', true);
-//        var_dump($_POST);
-//        die();
+        $birthday = $this->input->post('birthday', true);
+        $phone = $this->input->post('phone', true);
+        $email = $this->input->post('email', true);
 
-        if ($action == null) {
-            $this->load->view('Panel/Authentication/SignUp', array('error' => 0));
-        } else if ($action == 'doSignUp' && $this->form_validation->run() == FALSE) {
-            $this->load->view('Panel/Authentication/SignUp', array('error' => 1));
+        if ($action == null || $this->form_validation->run() == FALSE) {
+            $this->load->view('Panel/Authentication/SignUp');
         } else if ($action == 'doSignUp' && $this->form_validation->run() == TRUE) {
+            $user_id = $this->DBUser->registerNewUser(array(
+                'national_id' => $national_id,
+                'password' => sha1($password),
+                'email' => $email,
+                'phone_number' => str_replace('-', '', $phone),
+                'birthday' => str_replace('-', '/', $birthday),
+                'first_name' => 'unknown',
+                'last_name' => 'unknown'
+            ));
+            $this->DBRole->setUserRole($user_id, 'patient');
+            $this->session->set_flashdata(
+                array(
+                    'national_id' => $national_id,
+                    'password' => $password
+                )
+            );
             redirect('Authentication/signIn');
+        } else {
+            redirect('Authentication/signUp');
         }
     }
 
     public function signIn($action = null)
     {
-        $this->form_validation->set_rules('national_id', 'Username', 'required|trim|max_length[20]|numeric');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim|max_length[70]');
-        $this->form_validation->set_rules('section', 'Remember', 'required|trim|max_length[10]|in_list[clinic,education]');
-        $this->form_validation->set_rules('remember', 'Remember', 'trim|numeric');
+        $this->form_validation->set_rules('national_id', 'lang:national_id', 'required|trim|max_length[20]|numeric');
+        $this->form_validation->set_rules('password', 'lang:password', 'required|trim|max_length[70]');
+        $this->form_validation->set_rules('section', 'lang:section', 'required|trim|max_length[10]|in_list[clinic,education]');
+        $this->form_validation->set_rules('remember', 'lang:remember', 'trim|regex_match[/^1$/]');
         $national_id = $this->input->post('national_id', true);
         $password = $this->input->post('password', true);
         $section = $this->input->post('section', true);
         $remember = $this->input->post('remember', true);
 
-        if ($action == null) {
+
+        if ($action == null || $this->form_validation->run() == FALSE) {
             $this->load->view('Panel/Authentication/SignIn', array('error' => 0));
-        } else if ($action == 'doSignIn' && $this->form_validation->run() == FALSE) {
-            $this->load->view('Panel/Authentication/SignIn', array('error' => 1));
         } else if ($action == 'doSignIn' && $this->form_validation->run() == TRUE) {
             if ($this->DBUser->validateUsernameAndPassword($national_id, sha1($password))) {
-                setAuth($this->DBUser->getPrimaryDetail($national_id)[0], $remember);
-                $roles = $this->DBUser->getUserRole($national_id);
-                if (count($roles) > 1) {
-                    redirect('Authentication/selectRole');
-                } elseif (count($roles) == 1) {
-                    $this->session->set_userdata(
-                        array(
-                            'role_id' => $roles[0]['role_id'],
-                            'role_title' => $roles[0]['role_title'],
-                            'role_title_fa' => $roles[0]['role_title_fa']
-                        )
-                    );
-                    redirect('Panel');
-                }
+                $data = $this->DBUser->getPrimaryDetail($national_id)[0];
+                $data['section'] = $section;
+                setAuth($data, $remember);
             } else {
                 $this->load->view('Panel/Authentication/SignIn', array('error' => 1));
             }
@@ -96,7 +103,7 @@ class Authentication extends CI_Controller
     {
         if (!$this->session->has_userdata('national_id'))
             redirect('Authentication/signIn');
-        $this->form_validation->set_rules('role', 'Username', 'required|trim|numeric|max_length[20]');
+        $this->form_validation->set_rules('role', 'lang:role', 'required|trim|numeric|max_length[20]');
         $role = $this->input->post('role', true);
         $roles = $this->DBUser->getUserRole($this->session->userdata('national_id'));
         if ($action == null) {
