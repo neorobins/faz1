@@ -51,7 +51,7 @@
             <select name="role" class="form-control" style="height: auto; ">
                 <?php
                     foreach($roles as $role){
-                        echo "<option value='{$role['role_id']}'>{$role['role_title_fa']}</option>";
+                        echo "<option value='{$role['role_id']}'>{$this->lang->line($role['role_title'])}</option>";
                     }
 
                 ?>

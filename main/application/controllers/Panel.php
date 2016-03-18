@@ -9,7 +9,7 @@ class Panel extends CI_Controller
         if($this->session->userdata('panel_type')=='patient'){
             redirect("RegisterAdult");
         }else{
-            redirect('CourseManagement/allCourse');
+            redirect('RegisterAdult');
         }
     }
 

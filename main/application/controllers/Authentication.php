@@ -16,17 +16,20 @@ class Authentication extends CI_Controller
         $this->load->helper(array('Identification', 'form', 'security'));
         $this->load->library('form_validation');
         $this->load->model('DBUser');
+        $this->lang->load('Authentication','persian');
     }
 
     public function signUp($action = null)
     {
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|max_length[70]');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim|max_length[70]');
+        $this->form_validation->set_rules('national_id', 'Username', 'required|trim|max_length[20]|numeric');
+        $this->form_validation->set_rules('password', 'Password', 'required|trim|max_length[70]|matches[passwordRepeat]');
+        $this->form_validation->set_rules('passwordRepeat', 'Password', 'required|trim|max_length[70]');
         $this->form_validation->set_rules('remember', 'Remember', 'integer|trim');
         $username = $this->input->post('username', true);
         $password = $this->input->post('password', true);
         $remember = $this->input->post('remember', true);
-
+//        var_dump($_POST);
+//        die();
 
         if ($action == null) {
             $this->load->view('Panel/Authentication/SignUp', array('error' => 0));

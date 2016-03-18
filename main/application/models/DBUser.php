@@ -31,7 +31,7 @@ class DBUser extends CI_Model
     }
 
     public function getUserRole($national_id){
-        return $this->db->select('role.role_id,role.role_title,role.role_title_fa')
+        return $this->db->select('role.role_id,role.role_title')
                 ->from('user')
                 ->join('user_role','user.user_id=user_role.user_id')
                 ->join('role','user_role.role_id=role.role_id')
