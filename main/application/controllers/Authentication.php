@@ -63,7 +63,7 @@ class Authentication extends CI_Controller
     {
         $this->form_validation->set_rules('national_id', 'lang:national_id', 'required|trim|max_length[20]|numeric');
         $this->form_validation->set_rules('password', 'lang:password', 'required|trim|max_length[70]');
-        $this->form_validation->set_rules('section', 'lang:section', 'required|trim|max_length[10]|in_list[clinic,education]');
+        $this->form_validation->set_rules('section', 'lang:section', 'required|trim|in_list[clinic,education]');
         $this->form_validation->set_rules('remember', 'lang:remember', 'trim|regex_match[/^1$/]');
         $national_id = $this->input->post('national_id', true);
         $password = $this->input->post('password', true);
@@ -128,7 +128,65 @@ class Authentication extends CI_Controller
 
     }
 
-    public function passwordRecovery()
+    public function generateRecoveryCode($action = null)
     {
+        $this->load->model('DBRecovery');
+        $this->form_validation->set_rules('national_id', 'lang:national_id', 'required|trim|max_length[20]|numeric');
+        $this->form_validation->set_rules('recoveryWay', 'lang:recovery_way', 'required|trim|in_list[phone,email]');
+
+        $national_id = $this->input->post('national_id', true);
+        $recoveryWay = $this->input->post('recoveryWay', true);
+
+        if ($action == null || $this->form_validation->run() == FALSE) {
+            $this->load->view('Panel/Authentication/GenerateRecoveryCode', array('error' => 0));
+        } else if ($action == 'getCode' && $this->form_validation->run() == TRUE) {
+            if ($this->DBUser->isNationalIDExist($national_id)) {
+                $recovery_code = mt_rand(10000000, 99999999);
+                $this->DBRecovery->setNewRecoveryCode($this->DBUser->getUserID($national_id), $recovery_code, time());
+//                TODO: Send Recovery_code to email or phone
+                redirect('Authentication/passwordRecovery');
+            } else {
+                $this->load->view('Panel/Authentication/GenerateRecoveryCode', array('error' => 1));
+            }
+        } else {
+            redirect('Authentication/generateRecoveryCode');
+        }
+    }
+
+    public function passwordRecovery($action = null)
+    {
+        $this->load->model('DBRecovery');
+
+        $this->form_validation->set_rules('national_id', 'lang:national_id', 'required|trim|max_length[20]|numeric');
+        $this->form_validation->set_rules('recovery_code', 'lang:recovery_code', 'required|trim|exact_length[8]');
+        $this->form_validation->set_rules('password', 'lang:password', 'required|trim|max_length[70]|matches[passwordRepeat]');
+        $this->form_validation->set_rules('passwordRepeat', 'lang:password_repeat', 'required|trim|max_length[70]');
+
+        $national_id = $this->input->post('national_id', true);
+        $recovery_code = $this->input->post('recovery_code', true);
+        $password = $this->input->post('password', true);
+
+        if ($action == null || $this->form_validation->run() == FALSE) {
+            $this->load->view('Panel/Authentication/PasswordRecovery', array('error' => 0));
+        } else if ($action == 'recovery' && $this->form_validation->run() == TRUE) {
+            $user_id = $this->DBUser->getUserID($national_id);
+            if ($user_id && $this->DBRecovery->isRecoveryCodeActive($user_id, $recovery_code, time(), RECOVERY_EXPIRE)) {
+                if($this->DBUser->changePassword($user_id,sha1($password))){
+                    $this->DBRecovery->setRecoveryCodeExpire($user_id);
+                    $this->session->set_flashdata(
+                        array(
+                            'national_id' => $national_id,
+                            'password' => $password
+                        )
+                    );
+                }
+                redirect('Authentication/signIn');
+            } else {
+                $this->load->view('Panel/Authentication/PasswordRecovery', array('error' => 1));
+            }
+        } else {
+            redirect('Authentication/generateRecoveryCode');
+        }
+
     }
 }

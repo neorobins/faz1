@@ -1,8 +1,16 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Mohammad Amin
+ * Date: 18/03/2016
+ * Time: 06:13 PM
+ */
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>کلینیک آتیه | ورود</title>
+    <title>کلینیک آتیه | انتخاب بخش</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.4 -->
@@ -32,41 +40,32 @@
 <body class="register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="" style="color: floralwhite;">ورود به آتیه</a>
+        <a href="" style="color: floralwhite;">بازیابی رمز عبور</a>
     </div>
 
     <div class="register-box-body">
-        <!--        <p class="login-box-msg">register new </p>-->
-        <?=form_open('Authentication/signIn/doSignIn')?>
-            <div class="form-group has-feedback">
-                <input name="national_id" value="<?=$this->session->flashdata('national_id');?>" type="text" class="form-control" style="height: auto;" placeholder="کد ملی">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        <p class="login-box-msg">لطفا کد ملی خود را برای دریافت کد بازیابی حساب کاربری وارد نمایید</p>
+        <?= form_open('Authentication/generateRecoveryCode/getCode') ?>
+        <div class="form-group has-feedback">
+            <input name="national_id" type="text" class="form-control" style="height: auto;" placeholder="کد ملی">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group">
+            <!--            <label for="getSMS" class="col-sm-2 control-label">دریافت کد از طریق</label>-->
+
+            <div class="col-sm-10">
+                <input id="sms" type="radio" class="minimal" name="recoveryWay" value="phone" checked>
+                <label for="sms">از طریق پیامک</label>
+                <input id="email" type="radio" class="minimal" name="recoveryWay" value="email">
+                <label for="email">از طریق ایمیل</label>
             </div>
-            <div class="form-group has-feedback">
-                <input name="password" value="<?=$this->session->flashdata('password');?>" type="password" class="form-control" style="height: auto;" placeholder="رمز عبور">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="form-group">
-                <select name="section" class="form-control" style="height: auto; ">
-                    <option value="clinic">بخش کلینیک</option>
-                    <option value="education">بخش آموزش</option>
-                </select>
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input name="remember" type="checkbox" value="1"> من را به خاطر بسپار
-                        </label>
-                    </div>
-                </div><!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">ورود</button>
-                </div><!-- /.col -->
-            </div>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-flat">دریافت کد</button>
+        <a href="<?=base_url('Authentication/passwordRecovery')?>"><button type="button" class="btn btn-danger btn-block btn-flat">کد بازیابی را دارم</button></a>
         </form>
-        <a href="<?=base_url('Authentication/generateRecoveryCode');?>" class="text-center">رمز عبورم را فراموش کرده ام</a>
-        <h5 style="color: #9f191f;text-align: center;padding-top: 10px;"><?php echo validation_errors(); ?><br/><?php if($error===1) {echo 'نام کاربری یا رمز عبور نامعتبر است';}?></h5>
+        <h5 style="color: #9f191f;text-align: center;padding-top: 10px;"><?=validation_errors();?><br/><?=((isset($error)&&$error==1)?$this->lang->line('national_id_not_exist'):'');?></h5>
     </div><!-- /.form-box -->
 </div><!-- /.register-box -->
 
@@ -87,3 +86,5 @@
 </script>
 </body>
 </html>
+
+

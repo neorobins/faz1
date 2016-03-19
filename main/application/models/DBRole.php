@@ -33,5 +33,6 @@ class DBRole extends CI_Model
         ) {
             return $result[0]['role_id'];
         }
+        return false;
     }
 }
