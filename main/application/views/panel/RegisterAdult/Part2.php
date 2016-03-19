@@ -9,7 +9,7 @@
                 <label for="getEmail" class="col-sm-2 control-label">با چه کسی یا کسانی زندگی می کنید؟</label>
 
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="d21" placeholder="">
+                    <input type="text" class="form-control" name="28" placeholder="">
                 </div>
             </div>
             <div class="form-group">
@@ -57,16 +57,16 @@
                         <tr>
                             <td></td>
                             <td>پدر</td>
-                            <td><input type="text" class="form-control" name="d10" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d11" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d12" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d13" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="38-43" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="38-44" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="38-45" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="38-46" placeholder=""></td>
                             <td>
                                 <div class="col-sm-10">
-                                    <select>
-                                        <option>خوب</option>
-                                        <option>متوسط</option>
-                                        <option>بد</option>
+                                    <select name="38-47">
+                                        <option value="1">خوب</option>
+                                        <option value="2">متوسط</option>
+                                        <option value="3">بد</option>
                                     </select>
                                 </div>
                             </td>
@@ -74,16 +74,16 @@
                         <tr>
                             <td></td>
                             <td>مادر</td>
-                            <td><input type="text" class="form-control" name="d15" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d16" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d17" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d18" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="39-43" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="39-44" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="39-45" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="39-46" placeholder=""></td>
                             <td>
                                 <div class="col-sm-10">
-                                    <select>
-                                        <option>خوب</option>
-                                        <option>متوسط</option>
-                                        <option>بد</option>
+                                    <select name="39-47">
+                                        <option value="1">خوب</option>
+                                        <option value="2">متوسط</option>
+                                        <option value="3">بد</option>
                                     </select>
                                 </div>
                             </td>
@@ -91,52 +91,144 @@
                         <tr>
                             <td></td>
                             <td>همسر</td>
-                            <td><input type="text" class="form-control" name="d20" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d21" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d22" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d23" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="40-43" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="40-44" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="40-45" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="40-46" placeholder=""></td>
                             <td>
                                 <div class="col-sm-10">
-                                    <select>
-                                        <option>خوب</option>
-                                        <option>متوسط</option>
-                                        <option>بد</option>
+                                    <select name="40-47">
+                                        <option value="1">خوب</option>
+                                        <option value="2">متوسط</option>
+                                        <option value="3">بد</option>
                                     </select>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>فرزندان</td>
-                            <td><input type="text" class="form-control" name="d25" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d26" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d27" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d28" placeholder=""></td>
+                            <td>فرزند 1</td>
+                            <td><input type="text" class="form-control" name="41-43-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="41-44-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="41-45-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="41-46-1" placeholder=""></td>
                             <td>
                                 <div class="col-sm-10">
-                                    <select>
-                                        <option>خوب</option>
-                                        <option>متوسط</option>
-                                        <option>بد</option>
+                                    <select name="41-47-1">
+                                        <option value="1">خوب</option>
+                                        <option value="2">متوسط</option>
+                                        <option value="3">بد</option>
                                     </select>
                                 </div>
                             </td>
                         </tr>
+                        <script>
+                            $(document).ready(function () {
+                                $('#add_children').click(function () {
+                                    increaseChildrenCount();
+                                    var count = getChildrenCount();
+                                    div =   '<tr>' +
+                                            '<td></td>' +
+                                            '<td>فرزند ' + count + '</td>' +
+                                            '<td><input type="text" class="form-control" name="41-43-' + count + '" placeholder=""></td>' +
+                                            '<td><input type="text" class="form-control" name="41-44-' + count + '" placeholder=""></td>' +
+                                            '<td><input type="text" class="form-control" name="41-45-' + count + '" placeholder=""></td>' +
+                                            '<td><input type="text" class="form-control" name="41-46-' + count + '" placeholder=""></td>' +
+                                            '<td>' +
+                                            '<div class="col-sm-10">' +
+                                            '<select name="41-47-' + count + '">' +
+                                            '<option value="1">خوب</option>' +
+                                            '<option value="2">متوسط</option>' +
+                                            '<option value="3">بد</option>' +
+                                            '</select>' +
+                                            '</div>' +
+                                            '</td>' +
+                                            '</tr>';
+                                    $('#add_children_row').before(div);
+                                });
+                            });
+
+                            function getChildrenCount() {
+                                var x = document.getElementById('children_count');
+                                var count = x.className;
+                                return count;
+                            }
+
+                            function increaseChildrenCount() {
+                                var x = document.getElementById('children_count');
+                                x.className++;
+                            }
+                        </script>
+                        <tr id="add_children_row">
+                            <td id="children_count" class="1"></td>
+                            <td>
+                                <a class="btn btn-block btn-social btn-facebook" id="add_children">
+                                    <i class="fa fa-plus"></i>افزودن فرزند
+                                </a>
+
+                            </td>
+                        </tr>
                         <tr>
                             <td></td>
-                            <td>برادر/خواهر</td>
-                            <td><input type="text" class="form-control" name="d31" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d32" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d33" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d34" placeholder=""></td>
+                            <td>برادر/خواهر 1</td>
+                            <td><input type="text" class="form-control" name="42-43-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="42-44-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="42-45-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="42-46-1" placeholder=""></td>
                             <td>
                                 <div class="col-sm-10">
-                                    <select>
-                                        <option>خوب</option>
-                                        <option>متوسط</option>
-                                        <option>بد</option>
+                                    <select name="42-47-1">
+                                        <option value="1">خوب</option>
+                                        <option value="2">متوسط</option>
+                                        <option value="3">بد</option>
                                     </select>
                                 </div>
+                            </td>
+                        </tr>
+                        <script>
+                            $(document).ready(function () {
+                                $('#add_sibling').click(function () {
+                                    increaseSiblingCount();
+                                    var count = getSiblingCount();
+                                    div =   '<tr>' +
+                                        '<td></td>' +
+                                        '<td>برادر/خواهر ' + count + '</td>' +
+                                        '<td><input type="text" class="form-control" name="42-43-' + count + '" placeholder=""></td>' +
+                                        '<td><input type="text" class="form-control" name="42-44-' + count + '" placeholder=""></td>' +
+                                        '<td><input type="text" class="form-control" name="42-45-' + count + '" placeholder=""></td>' +
+                                        '<td><input type="text" class="form-control" name="42-46-' + count + '" placeholder=""></td>' +
+                                        '<td>' +
+                                        '<div class="col-sm-10">' +
+                                        '<select name="42-47-' + count + '">' +
+                                        '<option value="1">خوب</option>' +
+                                        '<option value="2">متوسط</option>' +
+                                        '<option value="3">بد</option>' +
+                                        '</select>' +
+                                        '</div>' +
+                                        '</td>' +
+                                        '</tr>';
+                                    $('#add_sibling_row').before(div);
+                                });
+                            });
+
+                            function getSiblingCount() {
+                                var x = document.getElementById('sibling_count');
+                                var count = x.className;
+                                return count;
+                            }
+
+                            function increaseSiblingCount() {
+                                var x = document.getElementById('sibling_count');
+                                x.className++;
+                            }
+                        </script>
+                        <tr id="add_sibling_row">
+                            <td id="sibling_count" class="1"></td>
+                            <td>
+                                <a class="btn btn-block btn-social btn-facebook" id="add_sibling">
+                                    <i class="fa fa-plus"></i>افزودن برادر / خواهر
+                                </a>
+
                             </td>
                         </tr>
 
@@ -166,55 +258,46 @@
                         <tr>
                             <td></td>
                             <td>پدر</td>
-                            <td><input type="text" class="form-control" name="d10" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d11" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d12" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d13" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="48-53" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="48-54" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="48-55" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="48-56" placeholder=""></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>مادر</td>
-                            <td><input type="text" class="form-control" name="d15" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d16" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d17" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d18" placeholder=""></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>همسر</td>
-                            <td><input type="text" class="form-control" name="d20" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d21" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d22" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d23" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="49-53" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="49-54" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="49-55" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="49-56" placeholder=""></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>فرزندان</td>
-                            <td><input type="text" class="form-control" name="d25" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d26" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d27" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d28" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="50-53-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="50-54-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="50-55-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="50-56-1" placeholder=""></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>برادر/خواهر</td>
-                            <td><input type="text" class="form-control" name="d31" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d32" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d33" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d34" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="51-53-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="51-54-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="51-55-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="51-56-1" placeholder=""></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>سایرین (دایی،عمه،عمو...)</td>
-                            <td><input type="text" class="form-control" name="d31" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d32" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d33" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d34" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="52-53-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="52-54-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="52-55-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="52-56-1" placeholder=""></td>
                             <td></td>
                         </tr>
 

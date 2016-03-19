@@ -10,9 +10,9 @@
                     اید؟</label>
 
                 <div class="col-sm-10">
-                    <input type="radio" class="minimal" name="getSMS20" value="yes" checked>&nbsp&nbspبله
-                    <input type="radio" class="minimal" name="getSMS20" value="no">&nbsp&nbspخیر<br/><br/>
-                    <input type="text" class="form-control" placeholder="در صورت پاسخ بله توضیح دهید">
+                    <input type="radio" class="minimal" name="57b" value="yes" checked>&nbsp&nbspبله
+                    <input type="radio" class="minimal" name="57b" value="no">&nbsp&nbspخیر<br/><br/>
+                    <input type="text" name="57" class="form-control" placeholder="در صورت پاسخ بله توضیح دهید">
                 </div>
             </div>
             <div class="form-group">
@@ -20,9 +20,9 @@
                     اید؟</label>
 
                 <div class="col-sm-10">
-                    <input type="radio" class="minimal" name="getSMS21" value="yes" checked>&nbsp&nbspبله
-                    <input type="radio" class="minimal" name="getSMS21" value="no">&nbsp&nbspخیر<br/><br/>
-                    <input type="text" class="form-control" placeholder="در صورت پاسخ بله توضیح دهید">
+                    <input type="radio" class="minimal" name="58b" value="yes" checked>&nbsp&nbspبله
+                    <input type="radio" class="minimal" name="58b" value="no">&nbsp&nbspخیر<br/><br/>
+                    <input type="text" name="58" class="form-control" placeholder="در صورت پاسخ بله توضیح دهید">
                 </div>
             </div>
             <div class="form-group">
@@ -30,8 +30,8 @@
                     اید؟</label>
 
                 <div class="col-sm-10">
-                    <input type="radio" class="minimal" name="getSMS22" value="yes" checked>&nbsp&nbspبله
-                    <input type="radio" class="minimal" name="getSMS22" value="no">&nbsp&nbspخیر<br/><br/>
+                    <input type="radio" class="minimal" name="59" value="yes" checked>&nbsp&nbspبله
+                    <input type="radio" class="minimal" name="59" value="no">&nbsp&nbspخیر<br/><br/>
                 </div>
             </div>
             <label><span class="glyphicon glyphicon-circle-arrow-down"></span>در صورت پاسخ بله جدول زیر را پر
@@ -53,10 +53,10 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="text" class="form-control" name="d10" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d11" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d12" placeholder=""></td>
-                            <td><input type="text" class="form-control" name="d13" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="60-61-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="60-62-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="60-63-1" placeholder=""></td>
+                            <td><input type="text" class="form-control" name="60-64-1" placeholder=""></td>
                             <td></td>
                         </tr>
 

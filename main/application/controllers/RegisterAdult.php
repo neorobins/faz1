@@ -9,6 +9,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class RegisterAdult extends CI_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper(array('form', 'url',));
+        $this->load->library(array('form_validation'));
+    }
+
     public function index()
     {
         loadView('panel/RegisterAdult/RegisterAdult',
@@ -31,6 +38,17 @@ class RegisterAdult extends CI_Controller
                 'jsclass/RegisterAdult/FormHelper.js'
             )
         );
+    }
+
+    public function doRegister()
+    {
+        $this->form_validation->set_rules('firstName', 'first Name', 'trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            redirect('registerAdult');
+        } else {
+            var_dump($_POST);
+        }
     }
 }
 
