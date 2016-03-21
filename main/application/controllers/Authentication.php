@@ -114,8 +114,7 @@ class Authentication extends CI_Controller
                     $this->session->set_userdata(
                         array(
                             'role_id' => $item['role_id'],
-                            'role_title' => $item['role_title'],
-                            'role_title_fa' => $item['role_title_fa']
+                            'role_title' => $item['role_title']
                         )
                     );
                     redirect('Panel');

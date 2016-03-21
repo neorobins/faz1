@@ -3,117 +3,120 @@
 /**
  * Created by PhpStorm.
  * User: Mohammad Amin
- * Date: 15/10/2015
- * Time: 12:39 PM
+ * Date: 21/03/2016
+ * Time: 12:46 PM
  */
 class MY_Controller extends CI_Controller
 {
-// user information
-    public $username = NULL;
+    protected $national_id = null;
 
-    public $name = NULL;
+    protected $user_id = null;
 
-    public $section_id = NULL;
+    protected $role_id = null;
 
-    public $section_name_fa = NULL;
+    protected $role_title = null;
+
+    protected $section = null;
 
 
     function __construct()
     {
         parent::__construct();
-//        import
-        $this->load->helper('cookie');
-        $this->load->library('session');
-
-        /*
-         *
-         * Check session
-         */
-
-
-//        2 halat darim : agar user daghighan ba'ad az login dar hal vared shodan be system mibashad ,
-//        4 ta var bala bayad null bashand va baraye avvalin bar meghdar dehi mishavand
-//        hala agar in ha ghablan meghdar dehi shode'and pas faghat meghdar
-
-
-//      get session data to variables
-        if ($this->name != NULL && $this->username != NULL && $this->section_id != NULL && $this->section_name_fa != NULL) {
-            if (!$this->checkAndAdd($this->username, $this->section_id, $this->name, FALSE)) {
-                $this->setAddress();
-                redirect('login');
-            }
-        } else {
-            $se_username = $this->session->userdata('username');
-            $se_name = $this->session->userdata('name');
-            $se_section_id = $this->session->userdata('section_id');
-
-//      validation user information in session
-
-            if ($se_username != NULL && $se_name != NULL && $se_section_id != NULL) {
-                $this->load->helper('identification');
-                if ($this->checkAndAdd($se_username, $se_section_id, $se_name) === FALSE) {
-                    $this->setAddress();
-                    redirect('login');
-                }
-            } else {
-                /*
-                 * check is set cookie or not
-                 */
-                $this->load->library('encrypt');
-                $coo = $this->encrypt->decode($this->input->cookie('feqhi_login_panel', TRUE), ENC_KEY);
-                if ($coo != NULL) {
-                    $coo = explode('_', $coo);
-                    if ($this->checkAndAdd($coo[0], $coo[3], $coo[2]) === TRUE) {
-                        $this->load->helper('identification');
-                        setAuth(array('name' => $this->name, 'username' => $this->username, 'section_id' => $this->section_id, 'remember' => 0));
-
-                    } else {
-                        $this->setAddress();
-                        redirect('login');
-                    }
-                } else {
-                    $this->setAddress();
-                    redirect('login');
-                }
-            }
-        }
-
-        if ($pa = $this->getAddress()) {
-            $this->setAddress(TRUE);
-            redirect($pa);
-        }
-
-//        check user access
-
-        $this->load->model('userlevel');
-        if (!$this->userlevel->isUserAccess($this->section_id, $this->router->fetch_class(), $this->router->fetch_method())) {
-            redirect('accessdenied');
-        }
-
-
+        $this->userControl();
     }
 
-    private function checkAndAdd($username, $section_id, $name, $addToLocal = TRUE)
+    private function userControl()
     {
-        $this->load->helper('identification');
-        if (isUserValidByDetail($username, $section_id) == TRUE) {
-            if ($addToLocal) {
-                $this->username = $username;
-                $this->name = $name;
-                $this->section_id = $section_id;
-
-//                get section name
-
-                $this->load->model('dbsection');
-                $this->section_name_fa = $this->dbsection->getSectionName_Fa($this->section_id)[0]['section_name_fa'];
+        if (!$this->checkVars()) {
+            if ($this->checkSession()) {
+                $this->setVars();
+                $this->setRoles();
+            } elseif ($this->getCookie()) {
+                $this->setVars();
+                redirect('Authentication/selectRole');
+            } else {
+                $this->setAddress();
+                redirect('Authentication/signIn');
             }
-            return TRUE;
-        } else {
-            return FALSE;
+        }
+        if (!$this->checkDetailValidation()) {
+            $this->setAddress();
+            redirect('Authentication/signIn');
+        }
+        if (!empty($url = $this->getAddress())) {
+            $this->setAddress(true);
+            redirect($url);
         }
     }
 
-//    when username or password is not valid , url save
+    private function checkVars()
+    {
+        if (
+        (empty($this->national_id)
+            || empty($this->user_id)
+            || empty($this->section)
+            ||empty($this->role_id)
+            || empty($this->role_title))
+        ) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private function setVars()
+    {
+        $this->national_id = $this->session->userdata('national_id');
+        $this->user_id = $this->session->userdata('user_id');
+        $this->section = $this->session->userdata('section');
+    }
+
+    private function setRoles()
+    {
+        $this->role_id = $this->session->userdata('role_id');
+        $this->role_title = $this->session->userdata('role_title');
+    }
+
+
+    private function checkSession()
+    {
+        if (
+            empty($this->session->userdata('national_id'))
+            || empty($this->session->userdata('user_id'))
+            || empty($this->session->userdata('role_id'))
+            || empty($this->session->userdata('role_title'))
+            || empty($this->session->userdata('section'))
+        ) {
+            return false;
+        }
+
+        return true;
+    }
+
+
+    private function checkDetailValidation()
+    {
+        $this->load->helper('Identification');
+        return isUserValidByDetail($this->user_id, $this->national_id);
+    }
+
+    private function getCookie()
+    {
+        $this->load->helper('cookie');
+        $this->load->library('encrypt');
+        if ($cookie = get_cookie('_login_panel'))
+            if ($cookie = $this->encrypt->decode($cookie, ENC_KEY))
+                if ($cookie = json_decode($cookie)) {
+                    $this->session->set_userdata(array(
+                        'user_id'=>$cookie->user_id,
+                        'national_id'=>$cookie->national_id,
+                        'section'=>$cookie->section
+                    ));
+                    return true;
+                }
+        return false;
+    }
+
     private function getAddress()
     {
         return $this->session->userdata('savedURL');
@@ -132,16 +135,4 @@ class MY_Controller extends CI_Controller
             );
         }
     }
-
-    protected function getSearchMode(){
-        return $this->session->userdata('search_mode');
-    }
-
-    protected function setSearchMode($search_mode){
-        $this->session->set_userdata(
-            array('search_mode' => $search_mode)
-        );
-    }
 }
-
-?>
