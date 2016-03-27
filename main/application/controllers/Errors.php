@@ -15,4 +15,8 @@ class Errors extends CI_Controller {
         loadView('errors/404',array(),array(),array());
     }
 
+    public function access_denied(){
+        loadView('errors/AccessDenied',array(),array(),array());
+    }
+
 }

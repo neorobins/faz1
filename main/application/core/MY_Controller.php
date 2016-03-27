@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Created by PhpStorm.
  * User: Mohammad Amin
  * Date: 21/03/2016
  * Time: 12:46 PM
@@ -16,13 +15,16 @@ class MY_Controller extends CI_Controller
 
     protected $role_title = null;
 
-    protected $section = null;
+    protected $section = null;  //section title
+
+    protected $userAccess = null;
 
 
     function __construct()
     {
         parent::__construct();
         $this->userControl();
+        $this->checkUserAccess();
     }
 
     private function userControl()
@@ -55,7 +57,7 @@ class MY_Controller extends CI_Controller
         (empty($this->national_id)
             || empty($this->user_id)
             || empty($this->section)
-            ||empty($this->role_id)
+            || empty($this->role_id)
             || empty($this->role_title))
         ) {
             return false;
@@ -108,9 +110,9 @@ class MY_Controller extends CI_Controller
             if ($cookie = $this->encrypt->decode($cookie, ENC_KEY))
                 if ($cookie = json_decode($cookie)) {
                     $this->session->set_userdata(array(
-                        'user_id'=>$cookie->user_id,
-                        'national_id'=>$cookie->national_id,
-                        'section'=>$cookie->section
+                        'user_id' => $cookie->user_id,
+                        'national_id' => $cookie->national_id,
+                        'section' => $cookie->section
                     ));
                     return true;
                 }
@@ -135,4 +137,22 @@ class MY_Controller extends CI_Controller
             );
         }
     }
+
+    private function checkUserAccess()
+    {
+        if (!isset($this->userAccess)) {
+            $this->load->model('UserAccess');
+            $this->userAccess = $this->UserAccess->getSectionAccess($this->user_id, $this->role_id, $this->section);
+            $this->session->set_userdata(
+                ['userAccess'=>$this->userAccess]
+            );
+        }
+        if (
+        !isset($this->userAccess[$this->router->fetch_class()]['access_function'][$this->router->fetch_method()])
+        ) {
+            redirect('Errors');
+        }
+
+    }
+
 }

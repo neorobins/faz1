@@ -85,27 +85,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <span class="label label-primary pull-left"><?php echo $mainVars['newMessageNumber']; ?></span>
                     </a>
                 </li>
-                <?php foreach ($mainVars['sideBarMenu'] as $key => $value) {
+                <?php foreach ($mainVars['sideBarMenu'] as $key => $value):
                     if ($key == 'panel') {
                         continue;
                     } ?>
                     <li class="treeview">
-                        <a href="<?= base_url() . $key; ?>">
+                        <a href="<?= base_url($key); ?>">
                             <i class="fa fa-bars"></i>
-                            <span><?= $value['name_fa'] ?></span>
+                            <span><?= $value['access_function']['index'] ?></span>
                         </a>
-                        <?php if (!isset($value['singleMenu'])) { ?>
+                        <?php if (count($value['access_function']) > 1): ?>
                             <ul class="treeview-menu">
-                                <?php foreach ($value as $keyi => $item): if ($keyi == 'name_fa' || $item == 1) {
-                                    continue;
-                                } ?>
-                                    <li><a href="<?= base_url() . $key . '/' . $keyi ?>"><i
-                                                class="fa fa-minus"></i><?= $item; ?></a></li>
+                                <?php
+                                 foreach ($value['access_function'] as $keyi=>$access):
+                                ?>
+                                    <li>
+                                        <a href="<?= base_url() . $key . '/' . $keyi ?>">
+                                            <i class="fa fa-minus"></i><?= $access; ?>
+                                        </a>
+                                    </li>
                                 <?php endforeach; ?>
                             </ul>
-                        <?php } ?>
+                        <?php endif; ?>
                     </li>
-                <?php } ?>
+                <?php endforeach; ?>
             </ul>
         </section>
     </aside>

@@ -10,14 +10,16 @@
 // get all vars like name , section name , ...
 function getMainVars()
 {
+
     $ci = get_instance();
-    $ci->load->model('UserLevel');
+    $ci->load->model('UserAccess');
     $ci->load->library('session');
 
-    $userLevel = $ci->UserLevel->getSectionAccess($ci->session->userdata('panel_type'));
+
+    $userAccess = $ci->session->userdata('userAccess');
     $title = '';
-    if(isset($userLevel[$ci->router->fetch_class()]) && isset($userLevel[$ci->router->fetch_class()]['name_fa'])){
-        $title = ' | '.$userLevel[$ci->router->fetch_class()]['name_fa'];
+    if(isset($userAccess[$ci->router->fetch_class()]) && isset($userAccess[$ci->router->fetch_class()]['name_fa'])){
+        $title = ' | '.$userAccess[$ci->router->fetch_class()]['name_fa'];
     }
     return array(
         'title' => "کلينيک آتيه".$title,
@@ -25,7 +27,7 @@ function getMainVars()
         'user_name' => "محمد امین باژند",
         'section_name_fa' => "پنل".' '.($ci->session->userdata('panel_type')=='patient'?'کلینیک':'آموزش'),
         'newMessageNumber' => "1",
-        'sideBarMenu' => $userLevel
+        'sideBarMenu' => $userAccess
     );
 }
 

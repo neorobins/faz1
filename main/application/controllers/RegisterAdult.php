@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 25/02/2016
  * Time: 10:59 AM
  */
-class RegisterAdult extends CI_Controller
+class RegisterAdult extends MY_Controller
 {
     function __construct()
     {
