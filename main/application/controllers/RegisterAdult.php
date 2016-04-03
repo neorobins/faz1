@@ -16,6 +16,9 @@ class RegisterAdult extends CI_Controller
         $this->load->library(array('form_validation'));
     }
 
+    /** This is the default method that show Register Adult
+     *
+     */
     public function index()
     {
         loadView('panel/RegisterAdult/RegisterAdult',
@@ -40,6 +43,9 @@ class RegisterAdult extends CI_Controller
         );
     }
 
+    /**
+     *
+     */
     public function doRegister()
     {
         $this->form_validation->set_rules('firstName', 'first Name', 'trim');
