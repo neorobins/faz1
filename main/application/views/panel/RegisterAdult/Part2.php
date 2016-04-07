@@ -35,6 +35,93 @@
                     <input type="text" id="d20" style="display: none;" placeholder="از سال...">
                 </div>
             </div>
+            <div class="form-group">
+                <label for="d5" class="col-sm-2 control-label">آیا دارای فرزند هستید؟</label>
+
+                <div class="col-sm-10">
+                    <label>بله
+                        <input type="radio" class="iradio_flat-blue" id="has-child-yes" value="yes" name="25b">
+                    </label>
+                    <label>خیر
+                        <input type="radio" class="iradio_flat-blue" id="has-child-no" value="no" name="25b">
+                    </label>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function () {
+                    $("#has-child-yes").click(function () {
+                        $("#child-birth-number").removeClass("hidden");
+                        $("#child-birth-type").removeClass("hidden");
+                        $("#child-birth-problem").removeClass("hidden");
+                        $("#child-birth-another-problem").removeClass("hidden");
+                    });
+                    $("#has-child-no").click(function () {
+                        $("#child-birth-number").addClass("hidden");
+                        $("#child-birth-type").addClass("hidden");
+                        $("#child-birth-problem").addClass("hidden");
+                        $("#child-birth-another-problem").addClass("hidden");
+                    });
+                });
+            </script>
+            <div class="form-group hidden" id="child-birth-number">
+                <label for="d5" class="col-sm-2 control-label">تعداد فرزند ها</label>
+
+                <div class="col-sm-10">
+                    <label>
+                        <input type="number" name="27b">
+                    </label>
+                </div>
+            </div>
+            <div class="form-group hidden" id="child-birth-type">
+                <label for="d5" class="col-sm-2 control-label">نوع زایمان ها</label>
+
+                <div class="col-sm-10">
+                    <label>طبیعی (فورسپس)
+                        <input type="checkbox" class="minimal" name="27b">
+                    </label>
+                    <label>طبیعی (وکیوم)
+                        <input type="checkbox" class="minimal" name="27b">
+                    </label>
+                    <label>سزارین
+                        <input type="checkbox" class="minimal" name="27b">
+                    </label>
+                </div>
+            </div>
+            <div class="form-group hidden" id="child-birth-problem">
+                <label for="d5" class="col-sm-2 control-label">مشکلات حین یا بعد از بارداری</label>
+                <script>
+                    $(document).ready(function () {
+                        $('#abortion').click(function () {
+                            $("#abortion-number").toggle(this.checked);
+                        });
+                    });
+
+                </script>
+                <div class="col-sm-10">
+
+                    <label>سقط جنین
+                        <input type="checkbox" class="icheckbox_minimal-blue" value="yes" id="abortion" name="30b">
+                    </label>
+                    <input type="number" id="abortion-number" name="27b" style="display: none" placeholder="تعداد سقط">
+                    <label>افسردگی
+                        <input type="checkbox" class="icheckbox_minimal-blue" value="yes" name="27b">
+                    </label>
+                    <label>استفاده از فورسپس یا وکیوم
+                        <input type="checkbox" class="icheckbox_minimal-blue" value="yes" name="27b">
+                    </label>
+                    <label>دوران سخت بارداری
+                        <input type="checkbox" class="icheckbox_minimal-blue" value="yes" name="27b">
+                    </label>
+                </div>
+            </div>
+            <div class="form-group hidden" id="child-birth-another-problem">
+                <label for="d5" class="col-sm-2 control-label">مشکلات حین یا بعد از بارداری</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="27b" placeholder="دیگر موارد مشکلات">
+                </div>
+            </div>
+
 
             <br/>
             <label><span class="glyphicon glyphicon-chevron-left"></span> لطفا جدول زیر را تکمیل نمایید</label>
@@ -127,7 +214,7 @@
                                 $('#add_children').click(function () {
                                     increaseChildrenCount();
                                     var count = getChildrenCount();
-                                    div =   '<tr>' +
+                                    div = '<tr>' +
                                             '<td></td>' +
                                             '<td>فرزند ' + count + '</td>' +
                                             '<td><input type="text" class="form-control" name="41-43-' + count + '" placeholder=""></td>' +
@@ -190,23 +277,23 @@
                                 $('#add_sibling').click(function () {
                                     increaseSiblingCount();
                                     var count = getSiblingCount();
-                                    div =   '<tr>' +
-                                        '<td></td>' +
-                                        '<td>برادر/خواهر ' + count + '</td>' +
-                                        '<td><input type="text" class="form-control" name="42-43-' + count + '" placeholder=""></td>' +
-                                        '<td><input type="text" class="form-control" name="42-44-' + count + '" placeholder=""></td>' +
-                                        '<td><input type="text" class="form-control" name="42-45-' + count + '" placeholder=""></td>' +
-                                        '<td><input type="text" class="form-control" name="42-46-' + count + '" placeholder=""></td>' +
-                                        '<td>' +
-                                        '<div class="col-sm-10">' +
-                                        '<select name="42-47-' + count + '">' +
-                                        '<option value="1">خوب</option>' +
-                                        '<option value="2">متوسط</option>' +
-                                        '<option value="3">بد</option>' +
-                                        '</select>' +
-                                        '</div>' +
-                                        '</td>' +
-                                        '</tr>';
+                                    div = '<tr>' +
+                                            '<td></td>' +
+                                            '<td>برادر/خواهر ' + count + '</td>' +
+                                            '<td><input type="text" class="form-control" name="42-43-' + count + '" placeholder=""></td>' +
+                                            '<td><input type="text" class="form-control" name="42-44-' + count + '" placeholder=""></td>' +
+                                            '<td><input type="text" class="form-control" name="42-45-' + count + '" placeholder=""></td>' +
+                                            '<td><input type="text" class="form-control" name="42-46-' + count + '" placeholder=""></td>' +
+                                            '<td>' +
+                                            '<div class="col-sm-10">' +
+                                            '<select name="42-47-' + count + '">' +
+                                            '<option value="1">خوب</option>' +
+                                            '<option value="2">متوسط</option>' +
+                                            '<option value="3">بد</option>' +
+                                            '</select>' +
+                                            '</div>' +
+                                            '</td>' +
+                                            '</tr>';
                                     $('#add_sibling_row').before(div);
                                 });
                             });

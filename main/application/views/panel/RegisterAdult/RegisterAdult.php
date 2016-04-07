@@ -1,14 +1,14 @@
 <script>
-    $(document).ready(function() {
-        $(window).keydown(function(event){
-            if(event.keyCode == 13) {
+    $(document).ready(function () {
+        $(window).keydown(function (event) {
+            if (event.keyCode == 13) {
                 event.preventDefault();
                 return false;
             }
         });
     });
     $(function () {
-        formHelper(4);
+        formHelper(7);
         //iCheck for checkbox and radio inputs
         $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
             checkboxClass: 'icheckbox_minimal-blue',
@@ -31,19 +31,23 @@
     </div>
     <?= form_open('registerAdult/doRegister', ['class' => 'form-horizontal']); ?>
 
-        <?=$part1?>
-        <?=$part2?>
-        <?=$part3?>
-        <?=$part4?>
-
-        <div class="box-footer">
-            <button type="button" id="previous_step" class="btn btn-info pull-right" style="display: none;" onclick="previousStepRegister();">مرحله ی قبل
-            </button>
-            <button type="button" id="next_step" class="btn btn-info pull-right" style="display: none;" onclick="nextStepRegister();">مرحله بعد
-            </button>
-            <button type="submit" id="submit" class="btn btn-danger pull-right" >تکمیل ثبت نام
-            </button>
-        </div><!-- /.box-footer -->
+    <?= $part1 ?>
+    <?= $part2 ?>
+    <?= $part3 ?>
+    <?= $part4 ?>
+    <?= $part5 ?>
+    <?= $part6 ?>
+    <?= $part7 ?>
+    <div class="box-footer">
+        <button type="button" id="previous_step" class="btn btn-info pull-right" style="display: none;"
+                onclick="previousStepRegister();">مرحله ی قبل
+        </button>
+        <button type="button" id="next_step" class="btn btn-info pull-right" style="display: none;"
+                onclick="nextStepRegister();">مرحله بعد
+        </button>
+        <button type="submit" id="submit" class="btn btn-danger pull-right">تکمیل ثبت نام
+        </button>
+    </div><!-- /.box-footer -->
 
     </form>
 
