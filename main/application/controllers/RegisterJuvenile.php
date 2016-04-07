@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 25/02/2016
  * Time: 10:59 AM
  */
-class RegisterJuvenile extends CI_Controller
+class RegisterJuvenile extends MY_Controller
 {
     public function index()
     {

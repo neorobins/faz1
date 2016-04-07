@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Date: 25/02/2016
  * Time: 10:59 AM
  */
-class RegisterAdult extends CI_Controller
+class RegisterAdult extends MY_Controller
 {
     function __construct()
     {
@@ -26,7 +26,10 @@ class RegisterAdult extends CI_Controller
                 'part1'=>$this->load->view('panel/RegisterAdult/Part1',array(),true),
                 'part2'=>$this->load->view('panel/RegisterAdult/Part2',array(),true),
                 'part3'=>$this->load->view('panel/RegisterAdult/Part3',array(),true),
-                'part4'=>$this->load->view('panel/RegisterAdult/Part4',array(),true)
+                'part4'=>$this->load->view('panel/RegisterAdult/Part4',array(),true),
+                'part5'=>$this->load->view('panel/RegisterAdult/Part5',array(),true),
+                'part6'=>$this->load->view('panel/RegisterAdult/Part6',array(),true),
+                'part7'=>$this->load->view('panel/RegisterAdult/Part7',array(),true)
             ),
             array(
                 'plugins/jdatepicker/skins/aqua/theme.css',
