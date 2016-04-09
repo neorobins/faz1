@@ -18,7 +18,7 @@
                 <label class="col-sm-2 control-label">سن مادر</label>
 
                 <div class="col-sm-10">
-                    <input type="number" size="6" min="10" max="130" value="40" class="form-control" name="225">
+                    <input type="number" size="6" min="0" max="130" value="0" class="form-control" name="225">
                 </div>
             </div>
 
@@ -238,7 +238,7 @@
                 <label for="pregnancyNum" class="col-sm-4 col-md-3 control-label">فرزند شما حاملگی چندم است؟</label>
 
                 <div class="col-sm-8 col-md-9">
-                    <input id="pregnancyNum" type="number" size="6" min="1" max="10" value="1" class="form-control"
+                    <input id="pregnancyNum" type="number" size="6" min="0" max="10" value="0" class="form-control"
                            name="249">
                 </div>
             </div>
@@ -298,11 +298,11 @@
                     </label>
                     <label class="box-body">
                         قد:
-                        <input type="number" size="6" min="1" max="10" value="1" name="253">
+                        <input type="number" size="6" min="0" max="10" value="0" name="253">
                     </label>
                     <label class="box-body">
                         وزن:
-                        <input type="number" size="6" min="1" max="10" value="1" name="254">
+                        <input type="number" size="6" min="0" max="10" value="0" name="254">
                     </label>
                 </div>
             </div>
@@ -439,7 +439,7 @@
 
                 <label class="col-sm-2 col-md-1">
                     چند روز:
-                    <input type="number" size="6" min="1" max="10" value="1" name="273">
+                    <input type="number" size="6" min="0" max="10" value="0" name="273">
                 </label>
 
                 <div class="col-sm-6 col-md-8">

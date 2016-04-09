@@ -38,7 +38,7 @@
                 <label for="age" class="col-sm-2 control-label">سن</label>
 
                 <div class="col-sm-10">
-                    <input id="age" type="number" size="6" min="0" max="17" value="10" class="form-control" name="184"
+                    <input id="age" type="number" size="6" min="0" max="17" value="0" class="form-control" name="184"
                            placeholder="">
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 <label for="dadAge" class="col-sm-2 control-label">سن پدر</label>
 
                 <div class="col-sm-10">
-                    <input id="dadAge" type="number" size="6" min="10" max="130" value="40" class="form-control"
+                    <input id="dadAge" type="number" size="6" min="0" max="130" value="0" class="form-control"
                            name="187" placeholder="">
                 </div>
             </div>
@@ -121,7 +121,7 @@
                 <label for="momAge" class="col-sm-2 control-label">سن مادر</label>
 
                 <div class="col-sm-10">
-                    <input id="momAge" type="number" size="6" min="10" max="130" value="40" class="form-control"
+                    <input id="momAge" type="number" size="6" min="0" max="130" value="0" class="form-control"
                            name="193" placeholder="">
                 </div>
             </div>
@@ -169,7 +169,7 @@
                 <label for="childrenNum" class="col-sm-2 control-label">تعداد فرزندان خانواده</label>
 
                 <div class="col-sm-10">
-                    <input id="childrenNum" type="number" size="6" min="1" max="50" value="1" class="form-control"
+                    <input id="childrenNum" type="number" size="6" min="0" max="50" value="0" class="form-control"
                            name="199" placeholder="">
                 </div>
             </div>

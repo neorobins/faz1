@@ -12,7 +12,7 @@ class RegisterJuvenile extends MY_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->helper(array('form', 'url',));
+        $this->load->helper(array('form', 'url', 'form2db'));
         $this->load->library(array('form_validation'));
     }
 
@@ -20,15 +20,15 @@ class RegisterJuvenile extends MY_Controller
     {
         loadView('panel/RegisterJuvenile/RegisterJuvenile',
             array(
-                'part1'=>$this->load->view('panel/RegisterJuvenile/Part1',array(),true),
-                'part2'=>$this->load->view('panel/RegisterJuvenile/Part2',array(),true),
-                'part3'=>$this->load->view('panel/RegisterJuvenile/Part3',array(),true),
-                'part4'=>$this->load->view('panel/RegisterJuvenile/Part4',array(),true),
-                'part5'=>$this->load->view('panel/RegisterJuvenile/Part5',array(),true),
-                'part6'=>$this->load->view('panel/RegisterJuvenile/Part6',array(),true),
-                'part7'=>$this->load->view('panel/RegisterJuvenile/Part7',array(),true),
-                'part8'=>$this->load->view('panel/RegisterJuvenile/Part8',array(),true),
-                'part9'=>$this->load->view('panel/RegisterJuvenile/Part9',array(),true)
+                'part1' => $this->load->view('panel/RegisterJuvenile/Part1', array(), true),
+                'part2' => $this->load->view('panel/RegisterJuvenile/Part2', array(), true),
+                'part3' => $this->load->view('panel/RegisterJuvenile/Part3', array(), true),
+                'part4' => $this->load->view('panel/RegisterJuvenile/Part4', array(), true),
+                'part5' => $this->load->view('panel/RegisterJuvenile/Part5', array(), true),
+                'part6' => $this->load->view('panel/RegisterJuvenile/Part6', array(), true),
+                'part7' => $this->load->view('panel/RegisterJuvenile/Part7', array(), true),
+                'part8' => $this->load->view('panel/RegisterJuvenile/Part8', array(), true),
+                'part9' => $this->load->view('panel/RegisterJuvenile/Part9', array(), true)
             ),
             array(
                 'plugins/jdatepicker/skins/aqua/theme.css',
@@ -52,7 +52,12 @@ class RegisterJuvenile extends MY_Controller
         if ($this->form_validation->run() == FALSE) {
             redirect('registerJuvenile');
         } else {
-            var_dump($_POST);
+            $result = insertResponses(1, $_POST);
+            if($result) {
+                Return "Insert Successfully done!";
+            }else {
+                Return "Insert failure!";
+            }
         }
     }
 }

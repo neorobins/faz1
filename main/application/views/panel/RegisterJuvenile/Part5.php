@@ -309,7 +309,7 @@
                 <label class="col-sm-4 col-md-3 control-label">کلا چند بار تشنج کرده؟</label>
 
                 <div class="col-sm-8 col-md-9">
-                    <input type="number" size="6" min="1" max="10" value="1" class="form-control" name="366">
+                    <input type="number" size="6" min="0" max="10" value="0" class="form-control" name="366">
                 </div>
             </div>
 

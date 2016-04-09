@@ -22,7 +22,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="275">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="275">
                                     ماهگی
                                 </label>
                             </li>
@@ -34,7 +34,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="276">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="276">
                                     ماهگی
                                 </label>
                             </li>
@@ -46,7 +46,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="277">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="277">
                                     ماهگی
                                 </label>
                             </li>
@@ -58,7 +58,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="278">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="278">
                                     ماهگی
                                 </label>
                             </li>
@@ -70,7 +70,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="279">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="279">
                                     ماهگی
                                 </label>
                             </li>
@@ -82,7 +82,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="280">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="280">
                                     ماهگی
                                 </label>
                             </li>
@@ -94,7 +94,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="281">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="281">
                                     ماهگی
                                 </label>
                             </li>
@@ -106,7 +106,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="282">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="282">
                                     ماهگی
                                 </label>
                             </li>
@@ -118,7 +118,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="283">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="283">
                                     ماهگی
                                 </label>
                             </li>
@@ -135,7 +135,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="284">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="284">
                                     ماهگی
                                 </label>
                             </li>
@@ -147,7 +147,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="285">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="285">
                                     ماهگی
                                 </label>
                             </li>
@@ -159,7 +159,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="286">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="286">
                                     ماهگی
                                 </label>
                             </li>
@@ -176,7 +176,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="287">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="287">
                                     ماهگی
                                 </label>
                             </li>
@@ -188,7 +188,7 @@
 
                                 <label class="box-body">
                                     سن شروع
-                                    <input type="number" size="6" min="10" max="130" value="40" name="288">
+                                    <input type="number" size="6" min="0" max="130" value="0" name="288">
                                     ماهگی
                                 </label>
                             </li>

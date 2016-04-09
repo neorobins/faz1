@@ -349,7 +349,7 @@
                             <td></td>
                             <td>1</td>
                             <td><input type="text" class="form-control" name="488-489-1"></td>
-                            <td><input type="number" class="form-control" name="488-490-1" min="1" max="120" value="20">                            </td>
+                            <td><input type="number" class="form-control" name="488-490-1" min="0" max="120" value="0">                            </td>
                             <td><input type="text" class="form-control" name="488-491-1"></td>
                             <td><input type="text" class="form-control" name="488-492-1"></td>
                         </tr>
@@ -362,7 +362,7 @@
                                         '<td></td>' +
                                         '<td>' + count + '</td>' +
                                         '<td><input type="text" class="form-control" name="488-489-' + count + '" ></td>' +
-                                        '<td><input type="number" class="form-control" name="488-490-' + count + '"  min="1" max="120" value="20"></td>' +
+                                        '<td><input type="number" class="form-control" name="488-490-' + count + '"  min="0" max="120" value="0"></td>' +
                                         '<td><input type="text" class="form-control" name="488-491-' + count + '" ></td>' +
                                         '<td><input type="text" class="form-control" name="488-492-' + count + '" ></td>' +
                                         '</tr>';
