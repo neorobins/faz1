@@ -8,28 +8,29 @@
         <div class="box-body">
 
             <div class="inline-group">
-                <label for="gender" >آیا کودک شما در حرکات ظریف مشکل دارد؟ (ناتوانی در کار با قیچی، بستن بند کفش، دکمه و زیپ، ساخت کاردستی، نوشتن، نقاشی و رنگ کردن)</label>
+                <label>آیا کودک شما در حرکات ظریف مشکل دارد؟ (ناتوانی در کار با قیچی، بستن بند کفش، دکمه و زیپ، ساخت
+                    کاردستی، نوشتن، نقاشی و رنگ کردن)</label>
 
-                <div >
+                <div>
                     <label class="box-body">
                         مشکل زیادی دارد
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="380" value="severe problem">
                     </label>
                     <label class="box-body">
                         مشکل دارد
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="380" value="problem">
                     </label>
                     <label class="box-body">
                         معمولی
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="380" value="normal">
                     </label>
                     <label class="box-body">
                         خوب عمل میکند
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="380" value="well">
                     </label>
                     <label class="box-body">
                         بسیار خوب عمل میکند
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="380" value="very well">
                     </label>
                 </div>
             </div>
@@ -37,28 +38,29 @@
             <div class="row"></div>
 
             <div class="inline-group">
-                <label for="gender" >آیا کودک شما در حرکات درشت مشکل دارد؟ (دویدن، پریدن، پرتاب توپ، زدن توپ، گرفتن توپ، دوچرخه سواری، مشارکت در ورزش ها و بازی های پرتحرک)</label>
+                <label>آیا کودک شما در حرکات درشت مشکل دارد؟ (دویدن، پریدن، پرتاب توپ، زدن توپ، گرفتن توپ، دوچرخه سواری،
+                    مشارکت در ورزش ها و بازی های پرتحرک)</label>
 
-                <div >
+                <div>
                     <label class="box-body">
                         مشکل زیادی دارد
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="381" value="severe problem">
                     </label>
                     <label class="box-body">
                         مشکل دارد
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="381" value="problem">
                     </label>
                     <label class="box-body">
                         معمولی
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="381" value="normal">
                     </label>
                     <label class="box-body">
                         خوب عمل میکند
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="381" value="well">
                     </label>
                     <label class="box-body">
                         بسیار خوب عمل میکند
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="381" value="very well">
                     </label>
                 </div>
             </div>
@@ -66,66 +68,68 @@
             <div class="row"></div>
 
             <div class="inline-group">
-                <label for="gender" >آیا کودک شما دست و پا چلفتی به نظر میرسد؟ (چیزها را زیاد میشکند، زیاد میریزد، زیاد زمین میخورد، زیاد به چیزها برخورد میکند)</label>
+                <label>آیا کودک شما دست و پا چلفتی به نظر میرسد؟ (چیزها را زیاد میشکند، زیاد میریزد، زیاد زمین میخورد،
+                    زیاد به چیزها برخورد میکند)</label>
 
-                <div >
+                <div>
                     <label class="box-body">
                         دست و پا چلفتی است
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="382" value="yes">
                     </label>
                     <label class="box-body">
                         معمولی
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="382" value="normal">
                     </label>
                     <label class="box-body">
                         اصلا دست و پا چلفتی نیست
-                        <input type="radio" class="minimal" name="56" value="yes" checked="">
+                        <input type="radio" class="minimal" name="382" value="no">
                     </label>
                 </div>
             </div>
 
             <div class="row"></div>
 
-                <div class="form-group">
-                    <label for="gender" class="col-sm-4 col-md-3 control-label">آیا کودک شما زود خسته میشود یا "شل و ول" به نظر میرسد؟</label>
+            <div class="form-group">
+                <label class="col-sm-4 col-md-3 control-label">آیا کودک شما زود خسته میشود یا "شل و ول" به نظر
+                    میرسد؟</label>
 
-                    <div class="col-sm-8 col-md-9">
-                        <label>
-                            بله
-                            <input type="radio" class="minimal" name="55" value="yes" checked="">
-                        </label>
-                        <label>
-                            خیر
-                            <input type="radio" class="minimal" name="55" value="no">
-                        </label>
-                    </div>
+                <div class="col-sm-8 col-md-9">
+                    <label>
+                        بله
+                        <input type="radio" class="minimal" name="383" value="yes">
+                    </label>
+                    <label>
+                        خیر
+                        <input type="radio" class="minimal" name="383" value="no">
+                    </label>
                 </div>
+            </div>
 
             <div class="row"></div>
 
-            <div >
-                <label for="gender" >کدامیک از موارد زیر در مورد در مورد کودک شما درست است:</label>
+            <div>
+                <label>کدامیک از موارد زیر در مورد در مورد کودک شما درست است:</label>
 
-                <ul >
+                <ul>
                     <li>
                         صدا
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     به صداها حساس است و سر و صدا یا صدای بلند اذیتش میکند
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="384">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     صدای بلند را دوست دارد و از سر و صدا خوشش می آید
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="385">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     نسبت به صداها کم توجه است
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="386">
                                 </label>
                             </li>
                         </ul>
@@ -135,15 +139,15 @@
                         نور
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     نور زیاد اذیتش میکند و جاهای پرنور را دوست ندارد
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="387">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     نور زیاد را دوست دارد و از نورها لذت میبرد
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="388">
                                 </label>
                             </li>
                         </ul>
@@ -153,21 +157,21 @@
                         بو
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     به بوها حساس است
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="389">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     معمولی
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="390">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     به بوها بی توجه است
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="391">
                                 </label>
                             </li>
                         </ul>
@@ -177,9 +181,9 @@
                         غذا
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     نسبت به مزه یا قوام غذاها حساس است (غذاهای خاصی را میخورد)
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="392">
                                 </label>
                             </li>
                         </ul>
@@ -189,21 +193,21 @@
                         چرخیدن
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     چرخیدن، تغییر وضعیت ناگهانی، تاب و سرسره و چرخ و فلک را بسیار دوست دارد
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="393">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     معمولی
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="394">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     اصلا دوست ندارد
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="395">
                                 </label>
                             </li>
                         </ul>
@@ -213,45 +217,21 @@
                         تحرک
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     بسیار پر تحرک است و بالا و پایین میپرد
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="396">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     معمولی
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="397">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     کم تحرک و محتاط است
-                                    <input type="checkbox" class="minimal">
-                                </label>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        تحرک
-                        <ul>
-                            <li>
-                                <label >
-                                    بسیار پر تحرک است و بالا و پایین میپرد
-                                    <input type="checkbox" class="minimal">
-                                </label>
-                            </li>
-                            <li>
-                                <label >
-                                    معمولی
-                                    <input type="checkbox" class="minimal">
-                                </label>
-                            </li>
-                            <li>
-                                <label >
-                                    کم تحرک و محتاط است
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="398">
                                 </label>
                             </li>
                         </ul>
@@ -261,21 +241,21 @@
                         درد
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     نسبت به درد بسیار حساس است
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="399">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     معمولی
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="400">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     درد را زیاد حس نمیکند
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="401">
                                 </label>
                             </li>
                         </ul>
@@ -285,15 +265,15 @@
                         سرما و گرما
                         <ul>
                             <li>
-                                <label >
+                                <label>
                                     نسبت به سرما و گرما حساس است
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="402">
                                 </label>
                             </li>
                             <li>
-                                <label >
+                                <label>
                                     معمولی
-                                    <input type="checkbox" class="minimal">
+                                    <input type="checkbox" class="minimal" name="403">
                                 </label>
                             </li>
                         </ul>
@@ -303,15 +283,18 @@
                         لمس
                         <ul>
                             <li>
-                                <label >
-                                    حساسیتش نسبت به لمس زیاد است (جنس برخی لباس ها یا مارک لباس اذیتش میکند، ماساژ و لمس شدن را دوست ندارد، از بازی هایی که دست را کثیف میکند خوشش نمی آید، زیر دوش رفتن و شانه کردن مو را دوست ندارد)
-                                    <input type="checkbox" class="minimal">
+                                <label>
+                                    حساسیتش نسبت به لمس زیاد است (جنس برخی لباس ها یا مارک لباس اذیتش میکند، ماساژ و لمس
+                                    شدن را دوست ندارد، از بازی هایی که دست را کثیف میکند خوشش نمی آید، زیر دوش رفتن و
+                                    شانه کردن مو را دوست ندارد)
+                                    <input type="checkbox" class="minimal" name="404">
                                 </label>
                             </li>
                             <li>
-                                <label >
-                                    حساسیتش نسبت به لمس کم است (بغل کردن و ماساژ را دوست دارد، به هر چیزی دست میزند، خاک بازی و خمیر بازی را دوست دارد)
-                                    <input type="checkbox" class="minimal">
+                                <label>
+                                    حساسیتش نسبت به لمس کم است (بغل کردن و ماساژ را دوست دارد، به هر چیزی دست میزند، خاک
+                                    بازی و خمیر بازی را دوست دارد)
+                                    <input type="checkbox" class="minimal" name="405">
                                 </label>
                             </li>
                         </ul>

@@ -23,7 +23,13 @@
 
     <!-- Horizontal Form -->
     <!-- form start -->
-    <form class="form-horizontal">
+    <div class="text-danger">
+        <?php
+        echo validation_errors();
+
+        ?>
+    </div>
+    <?= form_open('RegisterJuvenile/doRegister', ['class' => 'form-horizontal']); ?>
 
         <?=$part1?>
         <?=$part2?>

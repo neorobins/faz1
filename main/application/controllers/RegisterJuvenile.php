@@ -9,6 +9,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class RegisterJuvenile extends MY_Controller
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper(array('form', 'url',));
+        $this->load->library(array('form_validation'));
+    }
+
     public function index()
     {
         loadView('panel/RegisterJuvenile/RegisterJuvenile',
@@ -33,9 +40,20 @@ class RegisterJuvenile extends MY_Controller
                 'plugins/jdatepicker/calendar-setup.js',
                 'plugins/jdatepicker/lang/calendar-fa.js',
                 'plugins/iCheck/icheck.min.js',
-                'jsclass/RegisterAdult/FormHelper.js'
+//                'jsclass/RegisterAdult/FormHelper.js'
             )
         );
+    }
+
+    public function doRegister()
+    {
+        $this->form_validation->set_rules('firstName', 'first Name', 'trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            redirect('registerJuvenile');
+        } else {
+            var_dump($_POST);
+        }
     }
 }
 

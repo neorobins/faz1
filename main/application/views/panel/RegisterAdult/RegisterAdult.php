@@ -29,7 +29,7 @@
 
         ?>
     </div>
-    <?= form_open('registerAdult/doRegister', ['class' => 'form-horizontal']); ?>
+    <?= form_open('RegisterAdult/doRegister', ['class' => 'form-horizontal']); ?>
 
     <?= $part1 ?>
     <?= $part2 ?>
